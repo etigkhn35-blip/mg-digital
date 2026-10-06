@@ -6669,7 +6669,7 @@ button {
   margin: auto 0 25px;
 
   font-size: clamp(66px, 9.2vw, 155px);
-  line-height: 0.8;
+  line-height: 1;
   font-weight: 500;
   letter-spacing: -0.075em;
 }
@@ -11379,4 +11379,552 @@ button {
   .mg-menu-close span {
     width: 15px;
   }
+}
+/* =========================================================
+   M&G — PROJECT CASE STUDY / EDITORIAL SPLIT
+========================================================= */
+
+.mg-project-story {
+  width: 100%;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+
+/* =========================================================
+   STORY SECTION
+========================================================= */
+
+.mg-project-story-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(380px, 0.92fr);
+
+  min-height: 78vh;
+
+  padding:
+    clamp(70px, 8vw, 130px)
+    var(--page);
+
+  gap: clamp(55px, 7vw, 130px);
+
+  border-top: 1px solid var(--line);
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   ALTERNATING LAYOUT
+========================================================= */
+
+/* 1, 3, 5... FOTOĞRAF SOL */
+
+.mg-project-story-section:nth-child(odd)
+  .mg-project-story-media {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.mg-project-story-section:nth-child(odd)
+  .mg-project-story-copy {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+
+/* 2, 4, 6... FOTOĞRAF SAĞ */
+
+.mg-project-story-section:nth-child(even)
+  .mg-project-story-media {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.mg-project-story-section:nth-child(even)
+  .mg-project-story-copy {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+
+/* =========================================================
+   MEDIA
+========================================================= */
+
+.mg-project-story-media {
+  position: relative;
+
+  width: 100%;
+  margin: 0;
+
+  overflow: hidden;
+
+  background: #151513;
+}
+
+
+/* İlk görselleri editorial oranlarda tutuyoruz */
+
+.mg-project-story-media-full,
+.mg-project-story-media-landscape {
+  aspect-ratio: 4 / 5;
+}
+
+.mg-project-story-media-portrait {
+  aspect-ratio: 4 / 5;
+}
+
+.mg-project-story-media-square {
+  aspect-ratio: 1 / 1;
+}
+
+
+.mg-project-story-media img,
+.mg-project-story-media video {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* MEDIA INDEX */
+
+.mg-project-story-media-number {
+  position: absolute;
+  z-index: 2;
+
+  left: 16px;
+  bottom: 15px;
+
+  color: #f7f7f2;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.06em;
+}
+
+
+/* =========================================================
+   COPY
+========================================================= */
+
+.mg-project-story-copy {
+  display: block;
+
+  width: 100%;
+
+  padding: 0;
+}
+
+
+/* SMALL INDEX */
+
+.mg-project-story-index {
+  display: flex;
+
+  gap: 14px;
+
+  margin-bottom: clamp(35px, 4vw, 65px);
+
+  font-size: 9px;
+  line-height: 1;
+
+  font-weight: 700;
+
+  letter-spacing: 0.07em;
+}
+
+
+.mg-project-story-index span:first-child {
+  color: var(--accent);
+}
+
+
+/* CONTENT */
+
+.mg-project-story-content {
+  width: 100%;
+  max-width: 720px;
+}
+
+
+/* =========================================================
+   HEADLINE
+========================================================= */
+
+.mg-project-story-content h2 {
+  width: 100%;
+  max-width: 680px;
+
+  margin:
+    0
+    0
+    clamp(42px, 5vw, 75px);
+
+  font-size: clamp(38px, 4.3vw, 72px);
+
+  /*
+    ÖNEMLİ:
+    Eski 0.91 başlıkları birbirine sokuyordu.
+  */
+  line-height: 1.02;
+
+  font-weight: 500;
+
+  letter-spacing: -0.055em;
+
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+
+/* Turuncu başlık olayını kaldırıyoruz */
+
+.mg-project-story-section:nth-child(even)
+  .mg-project-story-content h2 {
+  color: var(--ink);
+}
+
+
+/* =========================================================
+   BODY COPY
+========================================================= */
+
+.mg-project-story-text {
+  width: 100%;
+  max-width: 570px;
+
+  margin: 0;
+}
+
+
+.mg-project-story-text p {
+  margin: 0 0 1.35em;
+
+  font-size: clamp(15px, 1.05vw, 18px);
+
+  line-height: 1.62;
+
+  letter-spacing: -0.02em;
+}
+
+
+.mg-project-story-text p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   EDITORIAL OFFSET
+========================================================= */
+
+/*
+  Her ikinci bölüm biraz daha farklı hizalanıyor.
+  Böylece sayfa fazla matematiksel görünmüyor.
+*/
+
+.mg-project-story-section:nth-child(even)
+  .mg-project-story-copy {
+  padding-left: clamp(0px, 2vw, 35px);
+}
+
+
+.mg-project-story-section:nth-child(odd)
+  .mg-project-story-copy {
+  padding-right: clamp(0px, 2vw, 35px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .mg-project-story-section {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(320px, 0.9fr);
+
+    gap: 45px;
+
+    min-height: auto;
+  }
+
+
+  .mg-project-story-content h2 {
+    font-size: clamp(36px, 5vw, 58px);
+
+    line-height: 1.03;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .mg-project-story-section {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 0;
+
+    gap: 42px;
+
+    padding:
+      20px
+      17px
+      80px;
+  }
+
+
+  /*
+    Mobilde her bölüm:
+    FOTOĞRAF → METİN
+  */
+
+  .mg-project-story-section:nth-child(odd)
+    .mg-project-story-media,
+  .mg-project-story-section:nth-child(even)
+    .mg-project-story-media {
+    order: 1;
+
+    width: 100%;
+
+    margin: 0;
+
+    aspect-ratio: 4 / 5;
+  }
+
+
+  .mg-project-story-section:nth-child(odd)
+    .mg-project-story-copy,
+  .mg-project-story-section:nth-child(even)
+    .mg-project-story-copy {
+    order: 2;
+
+    width: 100%;
+
+    padding: 0;
+  }
+
+
+  .mg-project-story-index {
+    margin-bottom: 28px;
+  }
+
+
+  .mg-project-story-content {
+    max-width: none;
+  }
+
+
+  .mg-project-story-content h2 {
+    max-width: none;
+
+    margin-bottom: 34px;
+
+    font-size: clamp(35px, 10.5vw, 52px);
+
+    line-height: 1.03;
+
+    letter-spacing: -0.05em;
+  }
+
+
+  .mg-project-story-text {
+    max-width: none;
+  }
+
+
+  .mg-project-story-text p {
+    font-size: 15px;
+
+    line-height: 1.6;
+  }
+}
+/* =========================================================
+   PROJECT CASE STUDY — REMAINING MEDIA
+   3 SQUARES SIDE BY SIDE
+========================================================= */
+
+.mg-project-story-gallery {
+  width: 100%;
+
+  padding:
+    clamp(70px, 9vw, 150px)
+    var(--page)
+    clamp(100px, 13vw, 190px);
+
+  background: var(--bg);
+  color: var(--ink);
+
+  border-top: 1px solid var(--line);
+}
+
+
+/* HEADER */
+
+.mg-project-story-gallery-head {
+  display: flex;
+  gap: 14px;
+
+  margin-bottom: clamp(40px, 5vw, 70px);
+
+  font-size: 9px;
+  line-height: 1;
+
+  font-weight: 700;
+  letter-spacing: 0.07em;
+}
+
+.mg-project-story-gallery-head span:first-child {
+  color: var(--accent);
+}
+
+
+/* =========================================================
+   3-COLUMN GRID
+========================================================= */
+
+.mg-project-story-gallery-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: clamp(12px, 1.5vw, 24px);
+
+  width: 100%;
+}
+
+
+/* ALL THREE ITEMS */
+
+.mg-project-story-gallery-item-1,
+.mg-project-story-gallery-item-2,
+.mg-project-story-gallery-item-3 {
+  width: 100%;
+  margin: 0;
+}
+
+
+/* =========================================================
+   SQUARE MEDIA
+========================================================= */
+
+.mg-project-story-gallery-media {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  overflow: hidden;
+
+  background: #151513;
+}
+
+.mg-project-story-gallery-media img,
+.mg-project-story-gallery-media video {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.7s ease;
+}
+
+
+/* SUBTLE HOVER */
+
+.mg-project-story-gallery-item:hover
+  .mg-project-story-gallery-media img,
+.mg-project-story-gallery-item:hover
+  .mg-project-story-gallery-media video {
+  transform: scale(1.025);
+}
+
+
+/* NUMBER */
+
+.mg-project-story-gallery-number {
+  position: absolute;
+
+  left: 14px;
+  bottom: 13px;
+
+  z-index: 2;
+
+  color: #f7f7f2;
+
+  font-size: 9px;
+  line-height: 1;
+
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .mg-project-story-gallery {
+    padding:
+      55px
+      17px
+      90px;
+  }
+
+  .mg-project-story-gallery-head {
+    margin-bottom: 32px;
+  }
+
+  .mg-project-story-gallery-grid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .mg-project-story-gallery-media {
+    aspect-ratio: 1 / 1;
+  }
+}
+/* =========================================================
+   CLIENT ROW LINKS
+========================================================= */
+
+.mg-client-row-link {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mg-client-row-link .mg-client-symbol {
+  transition: transform 0.3s ease;
+}
+
+.mg-client-row-link:hover .mg-client-symbol {
+  transform: translate(4px, -4px);
+}
+
+.mg-client-row-static {
+  cursor: default;
+}
+
+.mg-client-row-static .mg-client-symbol {
+  opacity: 0.25;
 }

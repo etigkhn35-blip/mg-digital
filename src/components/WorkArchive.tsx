@@ -191,8 +191,8 @@ export default function WorkArchive({
 }: WorkArchiveProps) {
   const tr = locale === "tr";
 
-  const [viewMode, setViewMode] =
-    useState<ViewMode>("services");
+const [viewMode, setViewMode] =
+  useState<ViewMode>("all");
 
   const [activeIndustry, setActiveIndustry] =
     useState<IndustryFilter>("all");
@@ -224,49 +224,31 @@ export default function WorkArchive({
       =================================================== */}
 
       <div className="mg-work-editorial-top">
-        <div className="mg-work-editorial-tabs">
-          <button
-            type="button"
-            className={
-              viewMode === "services"
-                ? "active"
-                : ""
-            }
-            onClick={() =>
-              setViewMode("services")
-            }
-          >
-            {tr ? "HİZMETLER" : "SERVICES"}
-          </button>
+       <div className="mg-work-editorial-tabs">
+  <button
+    type="button"
+    className={viewMode === "all" ? "active" : ""}
+    onClick={() => setViewMode("all")}
+  >
+    {tr ? "TÜM İŞLER" : "ALL WORK"}
+  </button>
 
-          <button
-            type="button"
-            className={
-              viewMode === "industries"
-                ? "active"
-                : ""
-            }
-            onClick={() =>
-              setViewMode("industries")
-            }
-          >
-            {tr ? "SEKTÖRLER" : "INDUSTRIES"}
-          </button>
+  <button
+    type="button"
+    className={viewMode === "services" ? "active" : ""}
+    onClick={() => setViewMode("services")}
+  >
+    {tr ? "HİZMETLER" : "SERVICES"}
+  </button>
 
-          <button
-            type="button"
-            className={
-              viewMode === "all"
-                ? "active"
-                : ""
-            }
-            onClick={() =>
-              setViewMode("all")
-            }
-          >
-            {tr ? "TÜM İŞLER" : "ALL WORK"}
-          </button>
-        </div>
+  <button
+    type="button"
+    className={viewMode === "industries" ? "active" : ""}
+    onClick={() => setViewMode("industries")}
+  >
+    {tr ? "SEKTÖRLER" : "INDUSTRIES"}
+  </button>
+</div>
 
         <p className="mg-work-editorial-manifesto">
           {tr

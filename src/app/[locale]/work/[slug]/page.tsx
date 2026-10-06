@@ -33,8 +33,10 @@ export default async function ProjectPage({
   }
 
   const nextProject = getNextProject(slug);
-
   const tr = locale === "tr";
+
+  const caseStudy = project.caseStudy;
+  const caseStudySections = caseStudy?.sections ?? [];
 
   return (
     <main id="top" className="mg-project-page">
@@ -47,7 +49,6 @@ export default async function ProjectPage({
         <Header locale={locale} />
 
         <div className="mg-project-hero-media">
-
           {project.coverType === "video" ? (
             <video
               autoPlay
@@ -71,7 +72,6 @@ export default async function ProjectPage({
           <div className="mg-project-hero-shade" />
 
           <div className="mg-project-hero-content">
-
             <div className="mg-project-hero-top">
               <Link href={`/${locale}/work`}>
                 <ArrowLeft
@@ -95,7 +95,6 @@ export default async function ProjectPage({
               <span>{project.location}</span>
               <span>{project.year}</span>
             </div>
-
           </div>
         </div>
       </section>
@@ -106,33 +105,34 @@ export default async function ProjectPage({
       =================================================== */}
 
       <section className="mg-project-info">
-
         <div className="mg-project-label">
           <span>01</span>
-
-          <span>
-            {tr ? "PROJE" : "PROJECT"}
-          </span>
+          <span>{tr ? "PROJE" : "PROJECT"}</span>
         </div>
 
         <div className="mg-project-info-main">
-
           <h2>
-            {tr
-              ? project.statementTR
-              : project.statementEN}
+            {caseStudy
+              ? tr
+                ? caseStudy.taglineTR
+                : caseStudy.taglineEN
+              : tr
+                ? project.statementTR
+                : project.statementEN}
           </h2>
 
           <div className="mg-project-info-bottom">
-
             <p>
-              {tr
-                ? project.introTR
-                : project.introEN}
+              {caseStudy
+                ? tr
+                  ? caseStudy.introTR
+                  : caseStudy.introEN
+                : tr
+                  ? project.introTR
+                  : project.introEN}
             </p>
 
             <div className="mg-project-services">
-
               <span>
                 {tr ? "HİZMETLER" : "SERVICES"}
               </span>
@@ -147,143 +147,276 @@ export default async function ProjectPage({
                   </li>
                 ))}
               </ul>
-
             </div>
           </div>
-
         </div>
       </section>
 
 
       {/* ===================================================
-    02 — VISUAL WORLD
-=================================================== */}
-
-<section className="mg-project-gallery">
-
-  <div className="mg-project-gallery-label">
-    <span>02</span>
-
-    <span>
-      {tr ? "GÖRSEL DÜNYA" : "VISUAL WORLD"}
-    </span>
-  </div>
-
-  <div className="mg-project-gallery-grid">
-
-    {project.media.map((item, index) => (
-      <figure
-        key={`${item.src}-${index}`}
-        className={`mg-project-gallery-item mg-project-gallery-${item.layout}`}
-      >
-        <div className="mg-project-gallery-media">
-
-          {item.type === "video" ? (
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-            >
-              <source
-                src={item.src}
-                type="video/mp4"
-              />
-            </video>
-          ) : (
-            <img
-              src={item.src}
-              alt={item.alt}
-              loading="lazy"
-            />
-          )}
-
-          <div className="mg-project-gallery-placeholder">
-            <span>
-              {String(index + 1).padStart(2, "0")}
-            </span>
-
-            <strong>{project.client}</strong>
-
-            <small>
-              {item.type === "video"
-                ? tr
-                  ? "FİLM"
-                  : "FILM"
-                : tr
-                  ? "GÖRSEL"
-                  : "IMAGE"}
-            </small>
-          </div>
-
-        </div>
-
-        <figcaption>
-          <span>
-            {String(index + 1).padStart(2, "0")}
-          </span>
-
-          <span>{project.client}</span>
-
-          <span>
-            {item.type === "video"
-              ? tr
-                ? "FİLM"
-                : "FILM"
-              : tr
-                ? "GÖRSEL"
-                : "IMAGE"}
-          </span>
-        </figcaption>
-      </figure>
-    ))}
-
-  </div>
-</section>
-
-      {/* ===================================================
-          03 — APPROACH
+          CASE STUDY
       =================================================== */}
 
-      <section className="mg-project-approach">
+      {caseStudy && caseStudySections.length > 0 && (
+        <section className="mg-project-story">
+          {caseStudySections.map((section, index) => {
+            const media = project.media[index];
 
-        <div className="mg-project-label">
-          <span>03</span>
+            return (
+              <article
+                className="mg-project-story-section"
+                key={`${project.slug}-${index}`}
+              >
+                {/* MEDIA */}
 
-          <span>
-            {tr
-              ? "YAKLAŞIM"
-              : "APPROACH"}
-          </span>
-        </div>
+                {media && (
+                  <div
+                    className={`mg-project-story-media mg-project-story-media-${media.layout}`}
+                  >
+                    {media.type === "video" ? (
+                      <video
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="metadata"
+                      >
+                        <source
+                          src={media.src}
+                          type="video/mp4"
+                        />
+                      </video>
+                    ) : (
+                      <img
+                        src={media.src}
+                        alt={media.alt}
+                        loading="lazy"
+                      />
+                    )}
 
-        <div className="mg-project-approach-content">
+                    <span className="mg-project-story-media-number">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                )}
 
-          <h2>
-            {tr
-              ? project.approachTitleTR
-              : project.approachTitleEN}
-          </h2>
+                {/* COPY */}
 
-          <p>
-            {tr
-              ? project.approachTR
-              : project.approachEN}
-          </p>
+                <div className="mg-project-story-copy">
+                  <div className="mg-project-story-index">
+                    <span>
+                      {String(index + 2).padStart(2, "0")}
+                    </span>
 
-        </div>
-      </section>
+                    <span>
+                      {tr ? "HİKÂYE" : "STORY"}
+                    </span>
+                  </div>
+
+                  <div className="mg-project-story-content">
+                    <h2>
+                      {tr
+                        ? section.titleTR
+                        : section.titleEN}
+                    </h2>
+
+                    <div className="mg-project-story-text">
+                      {(tr
+                        ? section.paragraphsTR
+                        : section.paragraphsEN
+                      ).map((paragraph, paragraphIndex) => (
+                        <p key={paragraphIndex}>
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </section>
+      )}
 
 
       {/* ===================================================
-          04 — NEXT PROJECT
+          VISUAL WORLD — FALLBACK / REMAINING MEDIA
+      =================================================== */}
+
+      {!caseStudy && project.media.length > 0 && (
+        <section className="mg-project-gallery">
+          <div className="mg-project-gallery-label">
+            <span>02</span>
+
+            <span>
+              {tr ? "GÖRSEL DÜNYA" : "VISUAL WORLD"}
+            </span>
+          </div>
+
+          <div className="mg-project-gallery-grid">
+            {project.media.map((item, index) => (
+              <figure
+                key={`${item.src}-${index}`}
+                className={`mg-project-gallery-item mg-project-gallery-${item.layout}`}
+              >
+                <div className="mg-project-gallery-media">
+                  {item.type === "video" ? (
+                    <video
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                    >
+                      <source
+                        src={item.src}
+                        type="video/mp4"
+                      />
+                    </video>
+                  ) : (
+                    <img
+                      src={item.src}
+                      alt={item.alt}
+                      loading="lazy"
+                    />
+                  )}
+                </div>
+
+                <figcaption>
+                  <span>
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <span>{project.client}</span>
+
+                  <span>
+                    {item.type === "video"
+                      ? tr
+                        ? "FİLM"
+                        : "FILM"
+                      : tr
+                        ? "GÖRSEL"
+                        : "IMAGE"}
+                  </span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      )}
+
+
+      {/* ===================================================
+          APPROACH — OLD PROJECT FALLBACK
+      =================================================== */}
+
+      {!caseStudy && (
+        <section className="mg-project-approach">
+          <div className="mg-project-label">
+            <span>03</span>
+
+            <span>
+              {tr ? "YAKLAŞIM" : "APPROACH"}
+            </span>
+          </div>
+
+          <div className="mg-project-approach-content">
+            <h2>
+              {tr
+                ? project.approachTitleTR
+                : project.approachTitleEN}
+            </h2>
+
+            <p>
+              {tr
+                ? project.approachTR
+                : project.approachEN}
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* ===================================================
+    CASE STUDY — REMAINING MEDIA
+=================================================== */}
+
+{caseStudy && project.media.length > caseStudySections.length && (
+  <section className="mg-project-story-gallery">
+
+    <div className="mg-project-story-gallery-head">
+      <span>
+        {String(caseStudySections.length + 2).padStart(2, "0")}
+      </span>
+
+      <span>
+        {tr ? "GÖRSEL DÜNYA" : "VISUAL WORLD"}
+      </span>
+    </div>
+
+    <div className="mg-project-story-gallery-grid">
+
+      {project.media
+        .slice(caseStudySections.length)
+        .map((item, index) => {
+          const mediaNumber =
+            caseStudySections.length + index + 1;
+
+          return (
+            <figure
+              key={`${item.src}-${index}`}
+              className={`mg-project-story-gallery-item mg-project-story-gallery-item-${index + 1}`}
+            >
+              <div className="mg-project-story-gallery-media">
+
+                {item.type === "video" ? (
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                  >
+                    <source
+                      src={item.src}
+                      type="video/mp4"
+                    />
+                  </video>
+                ) : (
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    loading="lazy"
+                  />
+                )}
+
+                <span className="mg-project-story-gallery-number">
+                  {String(mediaNumber).padStart(2, "0")}
+                </span>
+
+              </div>
+            </figure>
+          );
+        })}
+
+    </div>
+  </section>
+)}
+
+
+      {/* ===================================================
+          NEXT PROJECT
       =================================================== */}
 
       <section className="mg-project-next">
-
         <div className="mg-project-label">
-          <span>04</span>
+          <span>
+            {caseStudy
+              ? String(caseStudySections.length + 2).padStart(
+                  2,
+                  "0"
+                )
+              : "04"}
+          </span>
 
           <span>
             {tr
@@ -296,13 +429,10 @@ export default async function ProjectPage({
           href={`/${locale}/work/${nextProject.slug}`}
           className="mg-project-next-link"
         >
-          <span>
-            {nextProject.client}
-          </span>
+          <span>{nextProject.client}</span>
 
           <ArrowUpRight strokeWidth={1} />
         </Link>
-
       </section>
 
 

@@ -10,45 +10,50 @@ const stories = {
     {
       type: "INSIGHT",
       date: "2026",
-      title: "Hospitality brands don't need more content. They need a point of view.",
-      href: "/en/insights/hospitality-point-of-view",
+      title:
+        "Hospitality brands don't need more content. They need a point of view.",
+      href: "/en/insights/hospitality-brands-need-more-than-content",
       index: "01",
     },
     {
       type: "PERSPECTIVE",
       date: "2026",
-      title: "From destination to desire: building brands people want to belong to.",
-      href: "/en/insights/destination-to-desire",
+      title:
+        "From destination to desire: building brands people want to belong to.",
+      href: "/en/insights/from-destination-to-desire",
       index: "02",
     },
     {
-      type: "M&G NEWS",
+      type: "GROWTH",
       date: "2026",
-      title: "Bodrum. Istanbul. Lisbon. One independent creative practice.",
-      href: "/en/insights/mg-digital",
+      title: "Performance without brand is a dead end.",
+      href: "/en/insights/performance-without-brand-is-a-dead-end",
       index: "03",
     },
   ],
+
   tr: [
     {
       type: "İÇGÖRÜ",
       date: "2026",
-      title: "Hospitality markalarının daha fazla içeriğe değil, güçlü bir bakış açısına ihtiyacı var.",
-      href: "/tr/insights/hospitality-bakis-acisi",
+      title:
+        "Hospitality markalarının daha fazla içeriğe değil, güçlü bir bakış açısına ihtiyacı var.",
+      href: "/tr/insights/hospitality-brands-need-more-than-content",
       index: "01",
     },
     {
       type: "PERSPEKTİF",
       date: "2026",
-      title: "Destinasyondan arzuya: İnsanların parçası olmak istediği markalar yaratmak.",
-      href: "/tr/insights/destinasyondan-arzuya",
+      title:
+        "Destinasyondan arzuya: İnsanların parçası olmak istediği markalar yaratmak.",
+      href: "/tr/insights/from-destination-to-desire",
       index: "02",
     },
     {
-      type: "M&G HABER",
+      type: "BÜYÜME",
       date: "2026",
-      title: "Bodrum. İstanbul. Lizbon. Tek bir bağımsız yaratıcı yapı.",
-      href: "/tr/insights/mg-digital",
+      title: "Markasız performans bir çıkmazdır.",
+      href: "/tr/insights/performance-without-brand-is-a-dead-end",
       index: "03",
     },
   ],
@@ -63,7 +68,9 @@ export default function Thinking({ locale }: ThinkingProps) {
       <div className="mg-thinking-head">
         <div className="mg-thinking-label">
           <span>07</span>
-          <span>{tr ? "DÜŞÜNCE & PERSPEKTİF" : "THINKING & PERSPECTIVE"}</span>
+          <span>
+            {tr ? "DÜŞÜNCE & PERSPEKTİF" : "THINKING & PERSPECTIVE"}
+          </span>
         </div>
 
         <h2>
@@ -85,7 +92,11 @@ export default function Thinking({ locale }: ThinkingProps) {
 
       <div className="mg-thinking-grid">
         {items.map((item) => (
-          <Link href={item.href} className="mg-thinking-card" key={item.index}>
+          <Link
+            href={item.href}
+            className="mg-thinking-card"
+            key={item.index}
+          >
             <div className="mg-thinking-card-top">
               <span>{item.index}</span>
               <ArrowUpRight size={17} strokeWidth={1.4} />

@@ -119,15 +119,7 @@ export default function Footer({ locale }: FooterProps) {
               <InstagramIcon />
             </a>
 
-            <a
-              href="https://www.facebook.com/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Facebook"
-              title="Facebook"
-            >
-              <FacebookIcon />
-            </a>
+      
 
             <a
               href="https://www.linkedin.com/company/m-g-digital-communication-agency"
