@@ -110,7 +110,7 @@ export default function Footer({ locale }: FooterProps) {
 
           <div className="mg-footer-socials">
             <a
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/mgdigitalagency/"
               target="_blank"
               rel="noreferrer"
               aria-label="Instagram"
@@ -130,7 +130,7 @@ export default function Footer({ locale }: FooterProps) {
             </a>
 
             <a
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/company/m-g-digital-communication-agency"
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"
@@ -140,14 +140,14 @@ export default function Footer({ locale }: FooterProps) {
             </a>
 
             <a
-              href="https://wa.me/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="WhatsApp"
-              title="WhatsApp"
-            >
-              <WhatsappIcon />
-            </a>
+  href="https://wa.me/905528418095"
+  target="_blank"
+  rel="noreferrer"
+  aria-label="WhatsApp"
+  title="WhatsApp"
+>
+  <WhatsappIcon />
+</a>
           </div>
         </div>
       </div>
