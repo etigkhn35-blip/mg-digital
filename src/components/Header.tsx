@@ -217,6 +217,15 @@ export default function Header({ locale }: HeaderProps) {
         className={`mg-menu-overlay ${menuOpen ? "active" : ""}`}
         aria-hidden={!menuOpen}
       >
+        <button
+  type="button"
+  className="mg-menu-close"
+  onClick={() => setMenuOpen(false)}
+  aria-label={tr ? "Menüyü kapat" : "Close menu"}
+>
+  <span />
+  <span />
+</button>
         <div className="mg-menu-inner">
           <div className="mg-menu-label">
             {tr ? "Menü" : "Navigation"}

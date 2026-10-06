@@ -11300,3 +11300,83 @@ button {
     padding-top: 18px;
   }
 }
+/* =========================================================
+   FULLSCREEN MENU — CLOSE BUTTON
+========================================================= */
+
+.mg-menu-close {
+  position: fixed;
+  top: 26px;
+  right: var(--page);
+  z-index: 10005;
+
+  width: 44px;
+  height: 44px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(242, 242, 236, 0.65);
+  border-radius: 50%;
+
+  background: transparent;
+  color: #f2f2ec;
+
+  cursor: pointer;
+
+  transition:
+    background 250ms ease,
+    color 250ms ease,
+    transform 250ms ease;
+}
+
+.mg-menu-close span {
+  position: absolute;
+
+  width: 17px;
+  height: 1px;
+
+  background: currentColor;
+}
+
+.mg-menu-close span:first-child {
+  transform: rotate(45deg);
+}
+
+.mg-menu-close span:last-child {
+  transform: rotate(-45deg);
+}
+
+.mg-menu-close:hover {
+  background: #f2f2ec;
+  color: #242422;
+  transform: rotate(90deg);
+}
+
+
+/* Menü açıkken eski hamburgerları gizle */
+
+.mg-header.menu-open .mg-menu-button,
+.mg-header.menu-open .mg-mobile-menu-button {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 950px) {
+  .mg-menu-close {
+    top: 19px;
+    right: 18px;
+
+    width: 40px;
+    height: 40px;
+  }
+
+  .mg-menu-close span {
+    width: 15px;
+  }
+}
