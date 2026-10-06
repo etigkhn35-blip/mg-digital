@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { ArrowDown, Play, X } from "lucide-react";
+import { useRef, useState } from "react";
+import { ArrowDown, Play, Volume2, VolumeX, X } from "lucide-react";
 import Header from "./Header";
 
 type HeroProps = {
@@ -10,8 +10,30 @@ type HeroProps = {
 
 export default function Hero({ locale }: HeroProps) {
   const [reelOpen, setReelOpen] = useState(false);
+const [reelMuted, setReelMuted] = useState(true);
+const reelVideoRef = useRef<HTMLVideoElement>(null);
 
-  const tr = locale === "tr";
+const tr = locale === "tr";
+
+const toggleReelSound = () => {
+  const video = reelVideoRef.current;
+
+  if (!video) return;
+
+  const nextMuted = !video.muted;
+
+  video.muted = nextMuted;
+  setReelMuted(nextMuted);
+
+  if (!nextMuted) {
+    video.play().catch(() => {});
+  }
+};
+
+const closeReel = () => {
+  setReelOpen(false);
+  setReelMuted(true);
+};
 
   return (
     <>
@@ -168,7 +190,7 @@ export default function Hero({ locale }: HeroProps) {
     <button
       type="button"
       className="mg-reel-close"
-      onClick={() => setReelOpen(false)}
+      onClick={closeReel}
       aria-label={tr ? "Reeli kapat" : "Close reel"}
     >
       <X size={22} strokeWidth={1.3} />
@@ -185,10 +207,13 @@ export default function Hero({ locale }: HeroProps) {
           <div className="mg-crt-screen-shell">
             <div className="mg-crt-screen">
               <video
+                ref={reelVideoRef}
                 className="mg-crt-video"
                 autoPlay
+                muted={reelMuted}
                 playsInline
-                controls
+                loop
+                preload="metadata"
               >
                 <source
                   src="/media/mg-showreel.mp4"
@@ -209,6 +234,36 @@ export default function Hero({ locale }: HeroProps) {
 
             <div className="mg-crt-control-panel">
               <div className="mg-crt-led" />
+
+              <button
+                type="button"
+                className="mg-crt-sound-button"
+                onClick={toggleReelSound}
+                aria-label={
+                  reelMuted
+                    ? tr
+                      ? "Sesi aç"
+                      : "Turn sound on"
+                    : tr
+                      ? "Sesi kapat"
+                      : "Mute sound"
+                }
+                title={
+                  reelMuted
+                    ? tr
+                      ? "Sesi aç"
+                      : "Sound on"
+                    : tr
+                      ? "Sesi kapat"
+                      : "Mute"
+                }
+              >
+                {reelMuted ? (
+                  <VolumeX size={18} strokeWidth={1.5} />
+                ) : (
+                  <Volume2 size={18} strokeWidth={1.5} />
+                )}
+              </button>
 
               <div className="mg-crt-knob">
                 <span />

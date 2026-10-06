@@ -209,6 +209,97 @@ export default async function AboutPage({ params }: PageProps) {
   </div>
 </section>
 
+      {/* M&G IN NUMBERS */}
+
+      <section className="mg-about-numbers">
+        <div className="mg-about-numbers-head">
+          <div className="mg-about-numbers-label">
+            <span>03</span>
+            <span>{tr ? "RAKAMLARLA M&G" : "M&G IN NUMBERS"}</span>
+          </div>
+
+          <p>
+            {tr
+              ? "Üç şehirden dünyaya uzanan bağımsız bir yaratıcı yapı."
+              : "An independent creative practice working across three cities."}
+          </p>
+        </div>
+
+        <div className="mg-about-numbers-grid">
+          <article className="mg-about-number mg-about-number-cities">
+            <span className="mg-about-number-label">
+              {tr ? "ŞEHİR" : "CITIES"}
+            </span>
+
+            <strong>03</strong>
+
+            <p>
+              {tr
+                ? "Bodrum, İstanbul ve Lizbon arasında çalışan üç yaratıcı merkez."
+                : "Three creative hubs connecting Bodrum, Istanbul and Lisbon."}
+            </p>
+          </article>
+
+          <article className="mg-about-number">
+            <span className="mg-about-number-label">
+              {tr ? "DENEYİM" : "EXPERIENCE"}
+            </span>
+
+            <strong>15+</strong>
+
+            <p>
+              {tr
+                ? "Strateji, yaratıcılık ve dijital iletişimde 15 yılı aşan deneyim."
+                : "More than 15 years of experience across strategy, creativity and digital communication."}
+            </p>
+          </article>
+
+          <article className="mg-about-number">
+            <span className="mg-about-number-label">
+              {tr ? "EKİP" : "PEOPLE"}
+            </span>
+
+            <strong>35+</strong>
+
+            <p>
+              {tr
+                ? "Strateji, yaratıcı, içerik, prodüksiyon ve dijital disiplinleri bir araya getiren ekip."
+                : "A multidisciplinary team spanning strategy, creative, content, production and digital."}
+            </p>
+          </article>
+
+          <article className="mg-about-number">
+            <span className="mg-about-number-label">
+              {tr ? "MARKA" : "BRANDS"}
+            </span>
+
+            <strong>110+</strong>
+
+            <p>
+              {tr
+                ? "Konaklama, gastronomi, yaşam tarzı, kültür ve farklı sektörlerde 110'dan fazla marka iş birliği."
+                : "More than 110 brand partnerships across hospitality, gastronomy, lifestyle, culture and beyond."}
+            </p>
+          </article>
+
+          <article className="mg-about-number mg-about-number-projects">
+            <span className="mg-about-number-label">
+              {tr ? "PROJE" : "PROJECTS"}
+            </span>
+
+            <strong>1,200+</strong>
+
+            <p>
+              {tr
+                ? "Stratejiden prodüksiyona, sosyal medyadan dijital deneyimlere 1.200'den fazla proje."
+                : "More than 1,200 projects across strategy, production, social and digital experiences."}
+            </p>
+          </article>
+        </div>
+      </section>
+
+    
+
       {/* PRINCIPLES */}
 
       <section className="mg-about-principles">

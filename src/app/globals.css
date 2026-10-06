@@ -11928,3 +11928,223 @@ button {
 .mg-client-row-static .mg-client-symbol {
   opacity: 0.25;
 }
+.mg-crt-sound-button {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid rgba(21, 21, 19, 0.35);
+  border-radius: 50%;
+  background: transparent;
+  color: #151513;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.mg-crt-sound-button:hover {
+  background: #151513;
+  color: #f7f7f2;
+  transform: scale(1.05);
+}
+
+.mg-crt-sound-button:active {
+  transform: scale(0.95);
+}
+
+.mg-crt-sound-button:focus-visible {
+  outline: 2px solid #ee4d2d;
+  outline-offset: 3px;
+}
+/* =========================================================
+   ABOUT — M&G IN NUMBERS
+========================================================= */
+
+.mg-about-numbers {
+  width: 100%;
+  padding: clamp(90px, 10vw, 170px) var(--page);
+  background: var(--accent);
+  color: #151513;
+}
+
+.mg-about-numbers-head {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: clamp(40px, 7vw, 120px);
+  padding-bottom: clamp(60px, 7vw, 110px);
+  border-bottom: 1px solid rgba(247, 247, 242, 0.18);
+}
+
+.mg-about-numbers-label {
+  display: flex;
+  gap: 14px;
+  font-size: 9px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.mg-about-numbers-label span:first-child {
+  color: var(--accent);
+}
+
+.mg-about-numbers-head > p {
+  width: 100%;
+  max-width: 580px;
+  margin: 0;
+  font-size: clamp(25px, 2.5vw, 43px);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  font-weight: 500;
+}
+
+.mg-about-numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.mg-about-number {
+  grid-column: span 4;
+  min-height: clamp(330px, 34vw, 500px);
+  padding: clamp(38px, 4vw, 65px) clamp(20px, 3vw, 45px);
+  border-right: 1px solid rgba(247, 247, 242, 0.16);
+  border-bottom: 1px solid rgba(247, 247, 242, 0.16);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.mg-about-number:nth-child(3) {
+  border-right: 0;
+}
+
+.mg-about-number-cities {
+  grid-column: span 4;
+}
+
+.mg-about-number:nth-child(4) {
+  grid-column: 3 / span 4;
+}
+
+.mg-about-number-projects {
+  grid-column: span 4;
+  border-right: 0;
+}
+
+.mg-about-number-label {
+  display: block;
+  margin-bottom: clamp(35px, 4vw, 60px);
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  color: rgba(247, 247, 242, 0.72);
+}
+
+.mg-about-number strong {
+  display: block;
+  margin: 0 0 auto;
+  font-size: clamp(78px, 8vw, 145px);
+  line-height: 0.82;
+  font-weight: 500;
+  letter-spacing: -0.075em;
+  color: #f7f7f2;
+}
+
+.mg-about-number p {
+  width: 100%;
+  max-width: 360px;
+  margin: clamp(55px, 6vw, 90px) 0 0;
+  font-size: clamp(13px, 1vw, 16px);
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+  color: rgba(247, 247, 242, 0.7);
+}
+
+
+/* TABLET */
+
+@media (max-width: 1050px) {
+  .mg-about-numbers-head {
+    grid-template-columns: 1fr 1.5fr;
+  }
+
+  .mg-about-number {
+    grid-column: span 6;
+  }
+
+  .mg-about-number-cities {
+    grid-column: span 6;
+  }
+
+  .mg-about-number:nth-child(3) {
+    border-right: 1px solid rgba(247, 247, 242, 0.16);
+  }
+
+  .mg-about-number:nth-child(even) {
+    border-right: 0;
+  }
+
+  .mg-about-number:nth-child(4) {
+    grid-column: span 6;
+  }
+
+  .mg-about-number-projects {
+    grid-column: span 12;
+  }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+  .mg-about-numbers {
+    padding: 70px 17px 90px;
+  }
+
+  .mg-about-numbers-head {
+    display: block;
+    padding-bottom: 55px;
+  }
+
+  .mg-about-numbers-label {
+    margin-bottom: 45px;
+  }
+
+  .mg-about-numbers-head > p {
+    max-width: none;
+    font-size: clamp(30px, 9vw, 44px);
+  }
+
+  .mg-about-numbers-grid {
+    display: block;
+  }
+
+  .mg-about-number,
+  .mg-about-number-cities,
+  .mg-about-number:nth-child(4),
+  .mg-about-number-projects {
+    min-height: 330px;
+    padding: 38px 0 34px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(247, 247, 242, 0.16);
+  }
+
+  .mg-about-number-label {
+    margin-bottom: 40px;
+  }
+
+  .mg-about-number strong {
+    font-size: clamp(82px, 25vw, 120px);
+  }
+
+  .mg-about-number p {
+    max-width: 330px;
+    margin-top: 60px;
+    font-size: 14px;
+  }
+}
