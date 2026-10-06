@@ -187,6 +187,25 @@ export default function Header({ locale }: HeaderProps) {
             <span />
             <span />
           </button>
+
+          <button
+  className={`mg-mobile-menu-button ${menuOpen ? "active" : ""}`}
+  type="button"
+  aria-label={menuOpen ? "Close menu" : "Open menu"}
+  aria-expanded={menuOpen}
+  onClick={() => setMenuOpen((current) => !current)}
+>
+  <span className="mg-mobile-menu-text">
+    {menuOpen ? "" : "MENU"}
+  </span>
+
+  <span className="mg-mobile-menu-lines">
+    <i />
+    <i />
+    <i />
+  </span>
+</button>
+
         </div>
       </header>
 
@@ -268,7 +287,7 @@ export default function Header({ locale }: HeaderProps) {
 
               <div className="mg-menu-social-icons">
                 <a
-                  href="https://www.instagram.com/"
+                  href="https://www.instagram.com/mgdigitalagency/"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Instagram"
@@ -288,7 +307,7 @@ export default function Header({ locale }: HeaderProps) {
                 </a>
 
                 <a
-                  href="https://www.linkedin.com/"
+                  href="https://www.linkedin.com/company/m-g-digital-communication-agency"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="LinkedIn"
@@ -298,7 +317,7 @@ export default function Header({ locale }: HeaderProps) {
                 </a>
 
                 <a
-                  href="https://wa.me/"
+                  href="https://wa.me/905528418095"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="WhatsApp"

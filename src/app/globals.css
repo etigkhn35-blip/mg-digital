@@ -10825,3 +10825,478 @@ button {
     display: none;
   }
 }
+/* =========================================================
+   M&G — MOBILE HEADER / BASIC-STYLE MENU
+========================================================= */
+
+/* Mobile button desktop'ta yok */
+.mg-mobile-menu-button {
+  display: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 950px) {
+
+  /* HEADER */
+
+  .mg-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 82px;
+    min-height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 20px;
+
+    z-index: 10001;
+  }
+
+  .mg-header-logo,
+  .mg-logo {
+    position: relative;
+    z-index: 10003;
+
+    width: 135px !important;
+  }
+
+  .mg-header-logo-image {
+    width: 100%;
+    height: auto;
+  }
+
+
+  /* Desktop navigation tamamen kapanır */
+
+  .mg-nav {
+    display: none !important;
+  }
+
+
+  /* Header right */
+
+  .mg-header-right {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+
+  /* Desktop EN/TR mobil header'da görünmez.
+     Dil seçimi açılan menünün içinde olacak. */
+
+  .mg-header-right > .mg-languages {
+    display: none !important;
+  }
+
+
+  /* Desktop 2 çizgili buton mobilde kapanır */
+
+  .mg-menu-button {
+    display: none !important;
+  }
+
+
+  /* =======================================================
+     MOBILE — MENU + 3 LINES
+  ======================================================= */
+
+  .mg-mobile-menu-button {
+    position: relative;
+    z-index: 10003;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 8px 0;
+
+    border: 0;
+    background: transparent;
+    color: currentColor;
+
+    cursor: pointer;
+  }
+
+  .mg-mobile-menu-text {
+    font-size: 11px;
+    line-height: 1;
+    font-weight: 700;
+
+    letter-spacing: 0.03em;
+  }
+
+  .mg-mobile-menu-lines {
+    width: 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+  }
+
+  .mg-mobile-menu-lines i {
+    display: block;
+
+    width: 25px;
+    height: 1px;
+
+    background: currentColor;
+
+    transition:
+      transform 350ms cubic-bezier(.16, 1, .3, 1),
+      opacity 200ms ease;
+  }
+
+
+  /* Açıldığında X */
+
+  .mg-mobile-menu-button.active .mg-mobile-menu-lines i:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .mg-mobile-menu-button.active .mg-mobile-menu-lines i:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mg-mobile-menu-button.active .mg-mobile-menu-lines i:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+
+  /* =======================================================
+     OPEN MENU
+  ======================================================= */
+
+  .mg-menu-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 10000;
+
+    width: 100%;
+    height: 100dvh;
+
+    background: #242422;
+    color: #f2f2ec;
+
+    overflow-y: auto;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: none;
+
+    transition:
+      opacity 350ms ease,
+      visibility 350ms ease;
+  }
+
+  .mg-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+
+  /* Header menü açıkken */
+
+  .mg-header.menu-open {
+    position: fixed;
+    color: #f2f2ec !important;
+  }
+
+
+  /* =======================================================
+     MENU CONTENT
+  ======================================================= */
+
+  .mg-menu-inner {
+    width: 100%;
+    min-height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+
+    padding:
+      115px
+      22px
+      28px;
+  }
+
+
+  /* desktop küçük Navigation etiketi kaldır */
+
+  .mg-menu-label {
+    display: none;
+  }
+
+
+  /* =======================================================
+     NAVIGATION
+  ======================================================= */
+
+  .mg-menu-navigation {
+    display: flex;
+    flex-direction: column;
+
+    margin: 10px 0 55px;
+
+    border: 0;
+  }
+
+  .mg-menu-navigation > a {
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    min-height: auto;
+
+    padding: 9px 0;
+
+    border: 0;
+
+    color: #f2f2ec;
+
+    transition:
+      color 200ms ease,
+      padding-left 250ms ease;
+  }
+
+  .mg-menu-navigation > a:hover {
+    padding-left: 8px;
+    color: var(--accent);
+  }
+
+
+  /* Numara */
+
+  .mg-menu-number {
+    width: 30px;
+    flex: 0 0 30px;
+
+    font-size: 7px;
+    line-height: 1;
+
+    font-weight: 700;
+
+    color: rgba(242, 242, 236, 0.38);
+  }
+
+
+  /* Başlık */
+
+  .mg-menu-title {
+    font-size: clamp(25px, 8vw, 38px) !important;
+    line-height: 0.98 !important;
+
+    font-weight: 700 !important;
+
+    letter-spacing: -0.045em !important;
+
+    text-transform: uppercase;
+
+    color: inherit;
+  }
+
+
+  /* Desktop arrow mobilde yok */
+
+  .mg-menu-arrow {
+    display: none !important;
+  }
+
+
+  /* =======================================================
+     FOOTER
+  ======================================================= */
+
+  .mg-menu-footer {
+    margin-top: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr auto;
+    gap: 28px 20px;
+
+    padding-top: 22px;
+
+    border-top: 1px solid rgba(242, 242, 236, 0.18);
+  }
+
+
+  /* STUDIOS */
+
+  .mg-menu-footer > div:first-child {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .mg-menu-footer-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 7px;
+    line-height: 1;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    color: rgba(242, 242, 236, 0.4);
+  }
+
+  .mg-menu-footer p {
+    margin: 0;
+
+    font-size: 9px;
+    line-height: 1.4;
+
+    font-weight: 600;
+  }
+
+
+  /* =======================================================
+     EN / TR
+  ======================================================= */
+
+  .mg-menu-language-large {
+    grid-column: 2;
+    grid-row: 1;
+
+    display: flex !important;
+    align-items: flex-start;
+
+    gap: 7px;
+
+    font-size: 17px !important;
+    line-height: 1;
+
+    font-weight: 700;
+
+    letter-spacing: -0.03em;
+  }
+
+  .mg-menu-language-large a {
+    opacity: 0.4;
+
+    transition: opacity 200ms ease;
+  }
+
+  .mg-menu-language-large a.active {
+    opacity: 1;
+  }
+
+  .mg-menu-language-large span {
+    opacity: 0.25;
+  }
+
+
+  /* =======================================================
+     SOCIAL
+  ======================================================= */
+
+  .mg-menu-social-area {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .mg-menu-social-icons {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+  }
+
+  .mg-menu-social-icons a {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(242, 242, 236, 0.25);
+    border-radius: 50%;
+
+    color: #f2f2ec;
+  }
+
+  .mg-menu-social-icons svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .mg-header {
+    height: 74px;
+    min-height: 74px;
+
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+  .mg-header-logo,
+  .mg-logo {
+    width: 125px !important;
+  }
+
+  .mg-mobile-menu-text {
+    font-size: 10px;
+  }
+
+  .mg-mobile-menu-lines {
+    width: 23px;
+  }
+
+  .mg-mobile-menu-lines i {
+    width: 23px;
+  }
+
+  .mg-menu-inner {
+    padding:
+      100px
+      20px
+      24px;
+  }
+
+  .mg-menu-navigation {
+    margin-top: 18px;
+    margin-bottom: 42px;
+  }
+
+  .mg-menu-navigation > a {
+    padding: 8px 0;
+  }
+
+  .mg-menu-title {
+    font-size: clamp(24px, 7.7vw, 34px) !important;
+  }
+
+  .mg-menu-footer {
+    padding-top: 18px;
+  }
+}
