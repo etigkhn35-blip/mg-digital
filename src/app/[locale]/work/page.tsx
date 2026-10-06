@@ -24,9 +24,14 @@ export default async function WorkPage({ params }: PageProps) {
 
         <div className="mg-work-hero-content">
           <div className="mg-work-hero-meta">
-            <span>01</span>
-            <span>{locale === "tr" ? "SEÇİLİ İŞLER" : "SELECTED WORK"}</span>
-          </div>
+  <span className="mg-work-hero-index">01</span>
+
+  <span className="mg-work-hero-dot" aria-hidden="true" />
+
+  <span className="mg-work-hero-label">
+    {locale === "tr" ? "SEÇİLİ İŞLER" : "SELECTED WORK"}
+  </span>
+</div>
 
           <h1>
             {locale === "tr" ? (

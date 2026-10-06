@@ -3389,7 +3389,7 @@ button {
 .mg-work-hero {
   position: relative;
 
-  min-height: 88svh;
+  min-height: 100svh;
 
   padding: 0 var(--page);
 
@@ -3414,20 +3414,22 @@ button {
 /* HERO CONTENT */
 
 .mg-work-hero-content {
-  min-height: calc(88svh - 104px);
+  min-height: calc(100svh - 104px);
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 
-  padding: 60px 0 45px;
+  padding: clamp(110px, 13vh, 155px) 0 45px;
 }
 
 .mg-work-hero-meta {
   display: flex;
+  align-items: center;
   gap: 32px;
 
   font-size: 9px;
+  line-height: 1;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -3440,7 +3442,10 @@ button {
 .mg-work-hero h1 {
   max-width: 1200px;
 
-  margin: auto 0;
+  margin:
+    clamp(45px, 6vh, 80px)
+    0
+    clamp(55px, 7vh, 90px);
 
   font-size: clamp(65px, 8vw, 138px);
   line-height: 0.82;
@@ -3721,6 +3726,7 @@ button {
 
   .mg-work-hero-content {
     min-height: 675px;
+    
   }
 
   .mg-work-grid {
@@ -3741,7 +3747,7 @@ button {
 
 @media (max-width: 600px) {
   .mg-work-hero {
-    min-height: 700px;
+    min-height: calc(88svh + 90px);
   }
 
   .mg-work-hero-content {
@@ -6910,7 +6916,7 @@ button {
   max-width: 1200px;
 
   font-size: clamp(56px, 8vw, 135px);
-  line-height: 0.82;
+  line-height: 1;
   font-weight: 500;
   letter-spacing: -0.075em;
 }

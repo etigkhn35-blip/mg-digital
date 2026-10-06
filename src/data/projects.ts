@@ -1185,6 +1185,71 @@ caseStudy: {
 
     approachTR:
       "Yaratıcı yaklaşım, mekânı statik bir alan olarak göstermek yerine hareket, insanlar ve anlar üzerinden destinasyonun enerjisini yakalıyor.",
+caseStudy: {
+  taglineEN: "Summer, with a point of view.",
+  taglineTR: "Yaza farklı bir bakış.",
+
+  introEN:
+    "Root Yalıkavak is not simply about staying in Bodrum. It is about a particular way of experiencing summer — through architecture, design, atmosphere and the effortless rhythm of Yalıkavak.",
+
+  introTR:
+    "Root Yalıkavak yalnızca Bodrum'da konaklamakla ilgili değil. Mimari, tasarım, atmosfer ve Yalıkavak'ın zahmetsiz ritmi üzerinden yazı başka türlü yaşamakla ilgili.",
+
+  sections: [
+    {
+      titleEN: "NOT AN ESCAPE. A DIFFERENT WAY TO STAY.",
+      titleTR: "BİR KAÇIŞ DEĞİL. FARKLI BİR KONAKLAMA BİÇİMİ.",
+
+      paragraphsEN: [
+        "The story was never about presenting Root as a place removed from its surroundings. It was about making it feel naturally connected to Yalıkavak.",
+        "Architecture, landscape, people, light and the pace of summer became parts of the same visual world.",
+        "Instead of selling an escape, we focused on a different way of being present — slower, more considered and more connected to place.",
+      ],
+
+      paragraphsTR: [
+        "Hikâye hiçbir zaman Root'u çevresinden kopuk bir yer olarak göstermek değildi. Onu Yalıkavak'la doğal biçimde bağ kuran bir deneyim olarak anlatmak istedik.",
+        "Mimari, peyzaj, insanlar, ışık ve yazın ritmi aynı görsel dünyanın parçalarına dönüştü.",
+        "Bir kaçış satmak yerine; daha yavaş, daha düşünülmüş ve bulunduğu yerle daha güçlü bağ kuran farklı bir var olma biçimine odaklandık.",
+      ],
+    },
+
+    {
+      titleEN: "DESIGNED FOR SUMMER.",
+      titleTR: "YAZ İÇİN TASARLANDI.",
+
+      paragraphsEN: [
+        "Root's character comes from the relationship between architecture and the way summer is actually lived.",
+        "Open spaces, natural materials, changing light and moments between indoors and outdoors shaped the production language.",
+        "We treated design not as something to document, but as something people experience throughout the day.",
+      ],
+
+      paragraphsTR: [
+        "Root'un karakteri, mimari ile yazın gerçekten yaşanma biçimi arasındaki ilişkiden geliyor.",
+        "Açık alanlar, doğal malzemeler, değişen ışık ve iç mekânla dış mekân arasındaki anlar prodüksiyon dilini şekillendirdi.",
+        "Tasarımı belgelenmesi gereken bir unsur olarak değil, insanların gün boyunca deneyimlediği bir şey olarak ele aldık.",
+      ],
+    },
+
+    {
+      titleEN: "LUXURY WITHOUT THE CEREMONY.",
+      titleTR: "TÖRENSİZ LÜKS.",
+
+      paragraphsEN: [
+        "For Root, luxury was never about excess.",
+        "It was space, privacy, thoughtful design, good light and the freedom to experience Bodrum without unnecessary formality.",
+        "The resulting world feels premium without becoming distant — considered, but never over-styled.",
+        "A kind of luxury that doesn't need to announce itself.",
+      ],
+
+      paragraphsTR: [
+        "Root için lüks hiçbir zaman fazlalıkla ilgili değildi.",
+        "Alan, mahremiyet, düşünülmüş tasarım, iyi ışık ve Bodrum'u gereksiz resmiyetten uzak yaşama özgürlüğüydü.",
+        "Ortaya çıkan dünya mesafeli olmadan premium; fazla kurgulanmış hissettirmeden özenli.",
+        "Kendisini ilan etmeye ihtiyaç duymayan bir lüks anlayışı.",
+      ],
+    },
+  ],
+},
 
    media: [
   {
@@ -1272,6 +1337,70 @@ caseStudy: {
     approachTR:
       "Görsel dil, destinasyon anlatısını çağdaş ve uluslararası bir konaklama perspektifiyle dengeliyor.",
 
+caseStudy: {
+  taglineEN: "Hospitality, stripped back to what matters.",
+  taglineTR: "Konaklama, gerçekten önemli olana indirgendi.",
+
+  introEN:
+    "A hotel is not remembered as a collection of rooms, restaurants and facilities. It is remembered through moments — and our work for SO Hotel began with exactly that idea.",
+
+  introTR:
+    "Bir otel; odalar, restoranlar ve olanakların toplamı olarak hatırlanmaz. Anlarla hatırlanır. SO Hotel için yaklaşımımız tam olarak bu fikirle başladı.",
+
+  sections: [
+    {
+      titleEN: "A HOTEL IS MADE OF MOMENTS.",
+      titleTR: "BİR OTEL ANLARDAN OLUŞUR.",
+
+      paragraphsEN: [
+        "We moved away from treating hospitality content like a catalogue of spaces.",
+        "Instead, we focused on the moments that give those spaces meaning: arriving, waking up, stepping into the light, sitting down for a meal, slowing down and experiencing the destination.",
+        "Architecture remained important, but people and experience gave it context.",
+      ],
+
+      paragraphsTR: [
+        "Konaklama iletişimini mekânların kataloğu gibi ele almaktan uzaklaştık.",
+        "Bunun yerine o mekânlara anlam veren anlara odaklandık: varış, uyanmak, ışığa çıkmak, bir masaya oturmak, yavaşlamak ve destinasyonu yaşamak.",
+        "Mimari önemini korudu; fakat ona bağlamı insanlar ve deneyim verdi.",
+      ],
+    },
+
+    {
+      titleEN: "PLACE BEFORE PROPERTY.",
+      titleTR: "ÖNCE DESTİNASYON.",
+
+      paragraphsEN: [
+        "A hotel never exists in isolation from its destination.",
+        "For SO Hotel, landscape, climate, architecture and local atmosphere became part of the same hospitality story.",
+        "The objective was not simply to communicate where guests would stay, but where they would find themselves.",
+      ],
+
+      paragraphsTR: [
+        "Bir otel hiçbir zaman bulunduğu destinasyondan bağımsız değildir.",
+        "SO Hotel için peyzaj, iklim, mimari ve yerel atmosfer aynı konaklama hikâyesinin parçalarına dönüştü.",
+        "Amacımız yalnızca misafirlerin nerede kalacağını değil, kendilerini nasıl bir dünyanın içinde bulacağını anlatmaktı.",
+      ],
+    },
+
+    {
+      titleEN: "LESS HOTEL. MORE FEELING.",
+      titleTR: "DAHA AZ OTEL. DAHA FAZLA HİS.",
+
+      paragraphsEN: [
+        "The strongest hospitality communication doesn't explain every feature.",
+        "It creates enough desire for people to imagine themselves inside the experience.",
+        "Our visual language therefore became quieter, more atmospheric and more focused on the emotional value of staying somewhere.",
+      ],
+
+      paragraphsTR: [
+        "Güçlü konaklama iletişimi her özelliği tek tek açıklamaz.",
+        "İnsanların kendilerini deneyimin içinde hayal edebilmesine yetecek kadar arzu yaratır.",
+        "Bu nedenle görsel dilimizi daha sakin, daha atmosferik ve bir yerde kalmanın duygusal değerine daha fazla odaklanan bir yapıda kurduk.",
+      ],
+    },
+  ],
+},
+
     media: [],
   },
 
@@ -1320,6 +1449,70 @@ caseStudy: {
 
     approachTR:
       "Yaratıcı dünya, tesisi İstanbul'dan bağımsız bir deneyim olarak değil, şehrin bir parçası olarak konumlandırıyor.",
+
+caseStudy: {
+  taglineEN: "History, without standing still.",
+  taglineTR: "Tarih, yerinde saymadan.",
+
+  introEN:
+    "The Komana sits inside one of Istanbul's most layered neighbourhoods. Our challenge was to make that history present without allowing the brand to become trapped inside the past.",
+
+  introTR:
+    "The Komana, İstanbul'un en katmanlı bölgelerinden birinin içinde yer alıyor. Bizim için mesele bu tarihi görünür kılarken markayı geçmişin içine hapsetmemekti.",
+
+  sections: [
+    {
+      titleEN: "OLD ISTANBUL. NEW HOSPITALITY.",
+      titleTR: "ESKİ İSTANBUL. YENİ MİSAFİRPERVERLİK.",
+
+      paragraphsEN: [
+        "The surrounding city carries centuries of architecture, movement and memory.",
+        "Rather than reproducing familiar historical clichés, we looked at how contemporary hospitality could naturally exist within those layers.",
+        "The result connects old Istanbul with a more current, intimate and design-conscious way of staying in the city.",
+      ],
+
+      paragraphsTR: [
+        "Çevresindeki şehir yüzyılların mimarisini, hareketini ve hafızasını taşıyor.",
+        "Alışılmış tarihi İstanbul klişelerini yeniden üretmek yerine, çağdaş konaklama anlayışının bu katmanların içinde nasıl doğal biçimde yaşayabileceğine baktık.",
+        "Ortaya eski İstanbul'u daha güncel, samimi ve tasarım odaklı bir şehirde kalma deneyimiyle buluşturan bir dünya çıktı.",
+      ],
+    },
+
+    {
+      titleEN: "HISTORY IS CONTEXT, NOT DECORATION.",
+      titleTR: "TARİH DEKOR DEĞİL, BAĞLAMDIR.",
+
+      paragraphsEN: [
+        "Heritage works best when it is allowed to exist naturally.",
+        "Stone, texture, streets, architectural details and the surrounding neighbourhood became context rather than props.",
+        "This allowed the visual identity to acknowledge history without becoming nostalgic.",
+      ],
+
+      paragraphsTR: [
+        "Miras, doğal biçimde var olmasına izin verildiğinde daha güçlü çalışır.",
+        "Taş, doku, sokaklar, mimari detaylar ve çevredeki mahalle dekor değil, anlatının bağlamı oldu.",
+        "Böylece görsel kimlik tarihi kabul ederken nostaljiye dönüşmedi.",
+      ],
+    },
+
+    {
+      titleEN: "STAY INSIDE THE CITY.",
+      titleTR: "ŞEHRİN İÇİNDE KAL.",
+
+      paragraphsEN: [
+        "The Komana is not an experience designed to separate guests from Istanbul.",
+        "The city continues beyond the door — streets, people, history, food, movement and everyday life.",
+        "Our communication positioned the hotel as a starting point for experiencing Istanbul rather than a retreat from it.",
+      ],
+
+      paragraphsTR: [
+        "The Komana, misafirleri İstanbul'dan ayırmak için tasarlanmış bir deneyim değil.",
+        "Kapının dışında şehir devam ediyor: sokaklar, insanlar, tarih, gastronomi, hareket ve gündelik hayat.",
+        "İletişimde oteli İstanbul'dan kaçılan bir yer olarak değil, İstanbul'u yaşamaya başlanan bir nokta olarak konumlandırdık.",
+      ],
+    },
+  ],
+},
 
     media: [
   {
@@ -1407,6 +1600,72 @@ caseStudy: {
     approachTR:
       "Işık, peyzaj ve kontrollü kompozisyonlar; abartıya kaçmadan rafine hissettiren bir görsel dünya oluşturuyor.",
 
+caseStudy: {
+  taglineEN: "Don't sell the villa. Sell the life around it.",
+  taglineTR: "Villayı değil, etrafındaki hayatı sat.",
+
+  introEN:
+    "The One Bodrum required more than beautiful real-estate imagery. The objective was to transform architecture, location and lifestyle into desire — and desire into measurable interest.",
+
+  introTR:
+    "The One Bodrum için güzel gayrimenkul görsellerinden fazlası gerekiyordu. Amaç mimariyi, lokasyonu ve yaşam tarzını arzuya; arzuyu da ölçülebilir ilgiye dönüştürmekti.",
+
+  sections: [
+    {
+      titleEN: "SELL THE LIFE, NOT THE PROPERTY.",
+      titleTR: "MÜLKÜ DEĞİL, HAYATI SAT.",
+
+      paragraphsEN: [
+        "Premium real estate becomes more powerful when people can imagine the life surrounding the architecture.",
+        "We therefore moved beyond square metres, rooms and specifications.",
+        "Light, landscape, privacy, mornings, evenings and the rhythm of Bodrum became part of the proposition.",
+        "The villa remained the product. The life around it became the reason to want it.",
+      ],
+
+      paragraphsTR: [
+        "Premium gayrimenkul, insanlar mimarinin etrafındaki hayatı hayal edebildiğinde daha güçlü hale gelir.",
+        "Bu nedenle metrekare, oda ve teknik özelliklerin ötesine geçtik.",
+        "Işık, peyzaj, mahremiyet, sabahlar, akşamlar ve Bodrum'un ritmi teklifin bir parçasına dönüştü.",
+        "Villa ürün olarak kaldı. Onu istemenin nedeni ise etrafındaki hayat oldu.",
+      ],
+    },
+
+    {
+      titleEN: "DESIRE NEEDS DIRECTION.",
+      titleTR: "ARZUNUN BİR YÖNE İHTİYACI VAR.",
+
+      paragraphsEN: [
+        "Creating desire was only one half of the system.",
+        "The creative world needed to connect naturally with digital performance, enquiries and the sales journey.",
+        "Campaigns were therefore considered not as isolated advertisements, but as different entry points into the same brand experience.",
+      ],
+
+      paragraphsTR: [
+        "Arzu yaratmak sistemin yalnızca bir yarısıydı.",
+        "Yaratıcı dünyanın dijital performans, talepler ve satış yolculuğuyla doğal biçimde bağ kurması gerekiyordu.",
+        "Bu nedenle kampanyaları birbirinden bağımsız reklamlar olarak değil, aynı marka deneyimine açılan farklı giriş noktaları olarak ele aldık.",
+      ],
+    },
+
+    {
+      titleEN: "FROM ATTENTION TO ACTION.",
+      titleTR: "DİKKATTEN AKSİYONA.",
+
+      paragraphsEN: [
+        "The final objective was not visibility for visibility's sake.",
+        "Every piece of communication had a role within the journey from first impression to qualified interest.",
+        "Creative, media and conversion worked as one connected system — building the brand while creating a clearer path toward action.",
+      ],
+
+      paragraphsTR: [
+        "Nihai hedef yalnızca görünürlük değildi.",
+        "Her iletişim parçasının ilk karşılaşmadan nitelikli ilgiye uzanan yolculukta bir görevi vardı.",
+        "Yaratıcı, medya ve dönüşüm tek bir bağlantılı sistem olarak çalıştı; marka değerini oluştururken aksiyona giden yolu da netleştirdi.",
+      ],
+    },
+  ],
+},
+
    media: [
   {
     src: "/work/the-one-bodrum/01.png",
@@ -1492,6 +1751,74 @@ caseStudy: {
 
     approachTR:
       "İçerik yalnızca sunulan ürünlere değil; gastronomi, insanlar ve atmosfer bir araya geldiğinde bütün deneyimin nasıl hissettirdiğine odaklanıyor.",
+
+caseStudy: {
+  taglineEN: "Dinner was never the whole story.",
+  taglineTR: "Hikâye hiçbir zaman sadece akşam yemeği değildi.",
+
+  introEN:
+    "OPA is built around food, but it comes alive through people, music, movement and the energy of the night. Our communication had to capture the whole experience, not simply what arrived at the table.",
+
+  introTR:
+    "OPA'nın merkezinde gastronomi var; fakat marka insanlar, müzik, hareket ve gecenin enerjisiyle hayat buluyor. İletişimin yalnızca masaya geleni değil, bütün deneyimi yakalaması gerekiyordu.",
+
+  sections: [
+    {
+      titleEN: "DINING AS ENTERTAINMENT.",
+      titleTR: "EĞLENCEYE DÖNÜŞEN GASTRONOMİ.",
+
+      paragraphsEN: [
+        "OPA was never going to behave like a conventional restaurant brand.",
+        "Food might begin the evening, but music, people, service and atmosphere transform it into something larger.",
+        "Our visual language therefore moved constantly between gastronomy and entertainment.",
+        "The table became a stage and the night became part of the product.",
+      ],
+
+      paragraphsTR: [
+        "OPA hiçbir zaman klasik bir restoran markası gibi davranmayacaktı.",
+        "Geceyi yemek başlatabilir; fakat müzik, insanlar, servis ve atmosfer deneyimi çok daha büyük bir şeye dönüştürüyor.",
+        "Bu nedenle görsel dilimiz gastronomi ile eğlence arasında sürekli hareket etti.",
+        "Masa bir sahneye, gece ise ürünün bir parçasına dönüştü.",
+      ],
+    },
+
+    {
+      titleEN: "LAUNCH THE FEELING.",
+      titleTR: "HİSSİ LANSE ET.",
+
+      paragraphsEN: [
+        "A launch is not simply about announcing that a place exists.",
+        "It is about establishing the energy people should associate with it from the very beginning.",
+        "Content, social communication and production were designed to make OPA feel alive before people experienced it for themselves.",
+      ],
+
+      paragraphsTR: [
+        "Bir lansman yalnızca bir mekânın açıldığını duyurmak değildir.",
+        "İnsanların markayla ilişkilendireceği enerjiyi daha ilk günden kurmaktır.",
+        "İçerik, sosyal medya iletişimi ve prodüksiyonu; insanlar OPA'yı kendileri deneyimlemeden önce bile markayı canlı hissettirecek şekilde tasarladık.",
+      ],
+    },
+
+    {
+      titleEN: "MAKE THEM WISH THEY WERE THERE.",
+      titleTR: "ORADA OLMAK İSTESİNLER.",
+
+      paragraphsEN: [
+        "Nightlife communication depends on a particular kind of desire: the feeling that something is happening and you should be part of it.",
+        "We used people, movement, details and fragments of the night to create that sense of immediacy.",
+        "Rather than explaining the experience, the content gave just enough away to create FOMO.",
+        "Because sometimes the strongest call to action is simply wishing you were there.",
+      ],
+
+      paragraphsTR: [
+        "Gece hayatı iletişimi özel bir arzuya dayanır: bir şeylerin yaşandığını ve sizin de bunun parçası olmanız gerektiğini hissetmek.",
+        "Bu hissi yaratmak için insanları, hareketi, detayları ve geceden kısa parçaları kullandık.",
+        "Deneyimi tamamen açıklamak yerine FOMO yaratacak kadarını gösterdik.",
+        "Çünkü bazen en güçlü aksiyon çağrısı yalnızca 'keşke orada olsaydım' hissidir.",
+      ],
+    },
+  ],
+},
 
     media: [
   {
