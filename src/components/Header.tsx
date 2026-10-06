@@ -177,16 +177,7 @@ export default function Header({ locale }: HeaderProps) {
             </Link>
           </div>
 
-          <button
-            className={`mg-menu-button ${menuOpen ? "active" : ""}`}
-            type="button"
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={menuOpen}
-            onClick={() => setMenuOpen((current) => !current)}
-          >
-            <span />
-            <span />
-          </button>
+          
 
           <button
   className={`mg-mobile-menu-button ${menuOpen ? "active" : ""}`}
