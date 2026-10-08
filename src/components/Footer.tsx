@@ -100,8 +100,8 @@ export default function Footer({ locale }: FooterProps) {
         <div className="mg-footer-mail">
           <span>{tr ? "BİZE YAZIN" : "GET IN TOUCH"}</span>
 
-          <a href="mailto:hello@mgdigitalagency.com">
-            hello@mgdigitalagency.com
+          <a href="mailto:hello@mgdigitalagency.com.tr">
+            hello@mgdigitalagency.com.tr
           </a>
         </div>
 

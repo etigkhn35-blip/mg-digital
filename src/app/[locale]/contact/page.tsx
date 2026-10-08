@@ -92,8 +92,8 @@ export default async function ContactPage({ params }: PageProps) {
                 : "A new brand, a new project, a new campaign or simply a good idea. We can figure out where to start together."}
             </p>
 
-            <a href="mailto:hello@mgdigitalagency.com">
-              hello@mgdigitalagency.com
+            <a href="mailto:hello@mgdigitalagency.com.tr">
+              hello@mgdigitalagency.com.tr
             </a>
           </div>
         </div>
