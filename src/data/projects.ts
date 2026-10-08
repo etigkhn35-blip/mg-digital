@@ -1401,7 +1401,44 @@ caseStudy: {
   ],
 },
 
-    media: [],
+   media: [
+  {
+    src: "/work/so-hotel/01.png",
+    type: "image",
+    layout: "full",
+    alt: "SO Hotel Ras Al Khaimah",
+  },
+  {
+    src: "/work/so-hotel/02.png",
+    type: "image",
+    layout: "portrait",
+    alt: "SO Hotel Ras Al Khaimah",
+  },
+  {
+    src: "/work/so-hotel/03.png",
+    type: "image",
+    layout: "portrait",
+    alt: "SO Hotel Ras Al Khaimah",
+  },
+  {
+    src: "/work/so-hotel/04.png",
+    type: "image",
+    layout: "full",
+    alt: "SO Hotel Ras Al Khaimah",
+  },
+  {
+    src: "/work/so-hotel/05.png",
+    type: "image",
+    layout: "landscape",
+    alt: "SO Hotel Ras Al Khaimah",
+  },
+  {
+    src: "/work/so-hotel/06.png",
+    type: "image",
+    layout: "full",
+    alt: "SO Hotel Ras Al Khaimah",
+  },
+],
   },
 
 
@@ -1905,7 +1942,73 @@ caseStudy: {
 
     approachTR:
       "Yaratıcı yaklaşım, butik bir tesisin samimiyetini Yalıkavak'ın kendine özgü görsel karakteriyle bir araya getiriyor.",
+caseStudy: {
+  taglineEN: "A quieter side of Bodrum.",
+  taglineTR: "Bodrum’un daha sakin bir yüzü.",
 
+  introEN:
+    "Yalıkavak is often associated with energy, crowds and a fast pace. Spektr offers the opposite: a quieter, more personal side of Bodrum with a rhythm of its own.",
+
+  introTR:
+    "Yalıkavak denince akla çoğu zaman hareket, kalabalık ve yüksek tempo geliyor. Spektr ise bunun tam karşısında duran bir deneyim sunuyor: daha sakin, daha kişisel ve kendi ritmi olan bir Bodrum.",
+
+  sections: [
+    {
+      titleEN: "A DIFFERENT RHYTHM OF BODRUM.",
+      titleTR: "BODRUM’UN FARKLI BİR RİTMİ.",
+
+      paragraphsEN: [
+        "We built Spektr’s communication around this feeling. The objective was never simply to showcase rooms, villas or the physical features of the hotel. We wanted to communicate what it actually feels like to be there.",
+
+        "Morning light entering the room, the quiet around the pool, the nature of Yalıkavak, moments when the day begins to slow down and the small details of a holiday became the central characters of the content."
+      ],
+
+      paragraphsTR: [
+        "Spektr için oluşturduğumuz iletişim dilinin merkezine tam olarak bu hissi yerleştirdik. Amacımız yalnızca odaları, villaları ya da otelin fiziksel özelliklerini göstermek değildi. Misafirin burada nasıl hissedeceğini anlatmak istedik.",
+
+        "Sabah ışığının odaya girişini, havuz başındaki sessizliği, Yalıkavak’ın doğasını, günün yavaşladığı anları ve tatilin küçük detaylarını içeriklerin ana karakteri haline getirdik."
+      ]
+    },
+
+    {
+      titleEN: "LESS DISPLAY. MORE FEELING.",
+      titleTR: "DAHA AZ GÖSTERİ. DAHA FAZLA HİS.",
+
+      paragraphsEN: [
+        "Rather than an overt expression of luxury, we chose a natural, timeless and refined visual language. By bringing architecture, living spaces and the surrounding landscape together with human stories, we focused on positioning Spektr not simply as a hotel to stay in, but as a distinctive way of living in Yalıkavak.",
+
+        "Across photography and video production, we preserved the authentic atmosphere of the property while creating a clean, modern and international language for social media. In every frame, the intention was to say a little less and make people feel a little more."
+      ],
+
+      paragraphsTR: [
+        "Görsel dünyada gösterişli bir lüks yerine doğal, zamansız ve rafine bir estetik tercih ettik. Mimariyi, yaşam alanlarını ve çevreyi insan hikâyeleriyle bir araya getirerek Spektr’ü yalnızca “kalınacak bir otel” değil, Yalıkavak’ta kendine ait bir yaşam biçimi olarak konumlandırmaya odaklandık.",
+
+        "Fotoğraf ve video prodüksiyonlarında mekanın gerçek atmosferini korurken; sosyal medya içeriklerinde sade, modern ve uluslararası bir dil oluşturduk. Her karede biraz daha az anlatıp biraz daha fazla hissettirmeyi hedefledik."
+      ]
+    },
+
+    {
+      titleEN: "QUIET, BUT DISTINCT.",
+      titleTR: "SESSİZ, AMA GÜÇLÜ.",
+
+      paragraphsEN: [
+        "Because Spektr’s strength is not in speaking loudly. It lives in the details that the right people notice.",
+
+        "At M&G Digital, we approach content creation, photography and video production, Reels, social media management and digital communication for Spektr Boutique Hotel as one cohesive visual world — designed to preserve the brand’s quiet yet distinctive character.",
+
+        "Not just a stay in Yalıkavak. A different rhythm of Bodrum."
+      ],
+
+      paragraphsTR: [
+        "Çünkü Spektr’ün gücü yüksek sesle konuşmasında değil. Doğru insanların fark edeceği detaylarda.",
+
+        "M&G Digital olarak Spektr Boutique Hotel için içerik üretimi, fotoğraf & video prodüksiyonu, Reels, sosyal medya yönetimi ve dijital iletişim çalışmalarını; markanın bu sakin ama güçlü karakterini koruyacak bütünsel bir görsel dünya içerisinde ele alıyoruz.",
+
+        "Yalnızca Yalıkavak’ta bir konaklama değil. Bodrum’un farklı bir ritmi."
+      ]
+    }
+  ]
+},
    media: [
   {
     src: "/work/spektr/01.png",
