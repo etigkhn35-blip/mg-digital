@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
+import CookieConsent from "../components/CookieConsent";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -21,7 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={manrope.variable}>{children}</body>
+      <body className={manrope.variable}>
+        {children}
+        <CookieConsent />
+      </body>
     </html>
   );
 }

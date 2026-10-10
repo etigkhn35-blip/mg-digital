@@ -33,13 +33,6 @@ function InstagramIcon() {
   );
 }
 
-function FacebookIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M13.7 22v-9h3l.5-3.5h-3.5V7.3c0-1 .3-1.7 1.8-1.7h1.9V2.5c-.3 0-1.5-.1-2.8-.1-2.8 0-4.7 1.7-4.7 4.8v2.3H6.8V13h3.1v9h3.8Z" />
-    </svg>
-  );
-}
 
 function LinkedinIcon() {
   return (
@@ -296,15 +289,7 @@ export default function Header({ locale }: HeaderProps) {
                   <InstagramIcon />
                 </a>
 
-                <a
-                  href="https://www.facebook.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Facebook"
-                  title="Facebook"
-                >
-                  <FacebookIcon />
-                </a>
+               
 
                 <a
                   href="https://www.linkedin.com/company/m-g-digital-communication-agency"

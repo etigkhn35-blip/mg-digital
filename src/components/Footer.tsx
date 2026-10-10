@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import BackToTopButton from "./BackToTopButton";
 
 type FooterProps = {
   locale: "en" | "tr";
@@ -253,6 +254,9 @@ export default function Footer({ locale }: FooterProps) {
           {tr ? "YUKARI DÖN" : "BACK TO TOP"} ↑
         </a>
       </div>
+          <BackToTopButton
+        label={tr ? "Sayfanın başına dön" : "Back to top"}
+      />
     </footer>
   );
 }
