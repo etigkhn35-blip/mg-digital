@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
@@ -7,6 +8,54 @@ type CookiesPageProps = {
     locale: "en" | "tr";
   }>;
 };
+
+const SITE_URL = "https://mgdigitalagency.com.tr";
+
+export async function generateMetadata({
+  params,
+}: CookiesPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const tr = locale === "tr";
+
+const title = tr
+  ? "Çerez Politikası"
+  : "Cookie Policy";
+
+  const description = tr
+    ? "M&G Digital Çerez Politikası. Web sitemizde kullanılan çerezler ve benzeri teknolojiler, kullanım amaçları ve tercihlerinizi nasıl yönetebileceğiniz hakkında bilgi edinin."
+    : "Read the M&G Digital Cookie Policy to learn about cookies and similar technologies used on our website, why they are used and how you can manage your preferences.";
+
+  const path = `/${locale}/cookies`;
+
+  return {
+    title,
+    description,
+
+    alternates: {
+      canonical: path,
+      languages: {
+        en: "/en/cookies",
+        tr: "/tr/cookies",
+        "x-default": "/en/cookies",
+      },
+    },
+
+    openGraph: {
+      type: "website",
+      url: `${SITE_URL}${path}`,
+      title,
+      description,
+      siteName: "M&G Digital",
+      locale: tr ? "tr_TR" : "en_US",
+    },
+
+    twitter: {
+      card: "summary",
+      title,
+      description,
+    },
+  };
+}
 
 type SectionItem = [string, string, string];
 

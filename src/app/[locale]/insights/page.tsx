@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
@@ -10,6 +11,59 @@ type PageProps = {
     locale: string;
   }>;
 };
+const SITE_URL = "https://mgdigitalagency.com.tr";
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { locale } = await params;
+
+  if (locale !== "en" && locale !== "tr") {
+    return {};
+  }
+
+  const tr = locale === "tr";
+
+  const title = tr
+    ? "İçgörüler — Marka, Turizm, Kültür & Büyüme"
+    : "Insights — Brand, Hospitality, Culture & Growth";
+
+  const description = tr
+    ? "M&G Digital'den marka stratejisi, turizm ve konaklama, kültür, yaratıcılık, dijital iletişim ve büyüme üzerine içgörüler ve perspektifler."
+    : "Insights and perspectives from M&G Digital on brand strategy, hospitality, culture, creativity, digital communication and growth.";
+
+  const canonical = `${SITE_URL}/${locale}/insights`;
+
+  return {
+    title,
+    description,
+
+    alternates: {
+      canonical,
+      languages: {
+        en: `${SITE_URL}/en/insights`,
+        tr: `${SITE_URL}/tr/insights`,
+        "x-default": `${SITE_URL}/en/insights`,
+      },
+    },
+
+    openGraph: {
+      type: "website",
+      url: canonical,
+      siteName: "M&G Digital",
+      title: `${title} | M&G Digital`,
+      description,
+      locale: tr ? "tr_TR" : "en_US",
+      alternateLocale: tr ? ["en_US"] : ["tr_TR"],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} | M&G Digital`,
+      description,
+    },
+  };
+}
 
 const insights = [
   {

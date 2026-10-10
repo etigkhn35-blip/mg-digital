@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 
@@ -10,7 +11,59 @@ type PageProps = {
     locale: string;
   }>;
 };
+const SITE_URL = "https://mgdigitalagency.com.tr";
 
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { locale } = await params;
+
+  if (locale !== "en" && locale !== "tr") {
+    return {};
+  }
+
+  const tr = locale === "tr";
+
+  const title = tr
+    ? "İletişim — Bodrum, İstanbul & Lizbon"
+    : "Contact — Bodrum, Istanbul & Lisbon";
+
+  const description = tr
+    ? "M&G Digital ile yeni markanız, projeniz veya kampanyanız için iletişime geçin. Bodrum, İstanbul ve Lizbon'daki stüdyolarımızla strateji, yaratıcı iletişim, dijital ve büyüme projeleri geliştiriyoruz."
+    : "Contact M&G Digital for brand, creative, digital and growth projects. Work with our independent agency team across Bodrum, Istanbul and Lisbon.";
+
+  const canonical = `${SITE_URL}/${locale}/contact`;
+
+  return {
+    title,
+    description,
+
+    alternates: {
+      canonical,
+      languages: {
+        en: `${SITE_URL}/en/contact`,
+        tr: `${SITE_URL}/tr/contact`,
+        "x-default": `${SITE_URL}/en/contact`,
+      },
+    },
+
+    openGraph: {
+      type: "website",
+      url: canonical,
+      siteName: "M&G Digital",
+      title: `${title} | M&G Digital`,
+      description,
+      locale: tr ? "tr_TR" : "en_US",
+      alternateLocale: tr ? ["en_US"] : ["tr_TR"],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} | M&G Digital`,
+      description,
+    },
+  };
+}
 export default async function ContactPage({ params }: PageProps) {
   const { locale } = await params;
 

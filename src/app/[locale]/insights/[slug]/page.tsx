@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
@@ -167,6 +168,63 @@ const articles = {
   },
 };
 
+const SITE_URL = "https://mgdigitalagency.com.tr";
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { locale, slug } = await params;
+
+  if (locale !== "en" && locale !== "tr") {
+    return {};
+  }
+
+  const article = articles[slug as keyof typeof articles];
+
+  if (!article) {
+    return {};
+  }
+
+  const tr = locale === "tr";
+
+  const title = tr ? article.titleTR : article.titleEN;
+  const description = tr ? article.introTR : article.introEN;
+  const canonical = `${SITE_URL}/${locale}/insights/${slug}`;
+
+  return {
+    title,
+    description,
+
+    alternates: {
+      canonical,
+      languages: {
+        en: `${SITE_URL}/en/insights/${slug}`,
+        tr: `${SITE_URL}/tr/insights/${slug}`,
+        "x-default": `${SITE_URL}/en/insights/${slug}`,
+      },
+    },
+
+    openGraph: {
+      type: "article",
+      url: canonical,
+      siteName: "M&G Digital",
+      title: `${title} | M&G Digital`,
+      description,
+      locale: tr ? "tr_TR" : "en_US",
+      alternateLocale: tr ? ["en_US"] : ["tr_TR"],
+      
+      authors: ["M&G Digital"],
+      section: tr ? article.categoryTR : article.categoryEN,
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} | M&G Digital`,
+      description,
+    },
+  };
+}
+
 export default async function InsightDetailPage({ params }: PageProps) {
   const { locale, slug } = await params;
 
@@ -181,10 +239,75 @@ export default async function InsightDetailPage({ params }: PageProps) {
   }
 
   const tr = locale === "tr";
+    const title = tr ? article.titleTR : article.titleEN;
+  const description = tr ? article.introTR : article.introEN;
+  const category = tr ? article.categoryTR : article.categoryEN;
+  const canonical = `${SITE_URL}/${locale}/insights/${slug}`;
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description,
+    url: canonical,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": canonical,
+    },
+    inLanguage: tr ? "tr-TR" : "en-US",
+    articleSection: category,
+    author: {
+      "@type": "Organization",
+      name: "M&G Digital",
+      url: SITE_URL,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "M&G Digital",
+      url: SITE_URL,
+    },
+  };
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: tr ? "Ana Sayfa" : "Home",
+        item: `${SITE_URL}/${locale}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: tr ? "İçgörüler" : "Insights",
+        item: `${SITE_URL}/${locale}/insights`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: title,
+        item: canonical,
+      },
+    ],
+  };
   return (
-    <main id="top" className="mg-article-page">
-      <section className="mg-article-hero">
+  <main id="top" className="mg-article-page">
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(articleSchema).replace(/</g, "\\u003c"),
+      }}
+    />
+
+    <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
+  }}
+/>
+
+    <section className="mg-article-hero">
         <Header locale={locale} />
 
         <div className="mg-article-hero-inner">

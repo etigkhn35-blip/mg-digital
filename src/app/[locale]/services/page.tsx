@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
@@ -10,6 +11,60 @@ type PageProps = {
     locale: string;
   }>;
 };
+
+const SITE_URL = "https://mgdigitalagency.com.tr";
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { locale } = await params;
+
+  if (locale !== "en" && locale !== "tr") {
+    return {};
+  }
+
+  const tr = locale === "tr";
+
+  const title = tr
+    ? "Hizmetler — Strateji, Yaratıcı, İçerik, Büyüme & Dijital"
+    : "Services — Strategy, Creative, Content, Growth & Digital";
+
+  const description = tr
+    ? "M&G Digital; marka stratejisi, yaratıcı iletişim, içerik ve prodüksiyon, performans pazarlaması, web tasarımı, SEO ve dijital deneyim hizmetleri sunan 360° dijital iletişim ajansıdır."
+    : "M&G Digital delivers brand strategy, creative, content and production, performance marketing, web design, SEO and digital experiences through one connected agency practice.";
+
+  const canonical = `${SITE_URL}/${locale}/services`;
+
+  return {
+    title,
+    description,
+
+    alternates: {
+      canonical,
+      languages: {
+        en: `${SITE_URL}/en/services`,
+        tr: `${SITE_URL}/tr/services`,
+        "x-default": `${SITE_URL}/en/services`,
+      },
+    },
+
+    openGraph: {
+      type: "website",
+      url: canonical,
+      siteName: "M&G Digital",
+      title: `${title} | M&G Digital`,
+      description,
+      locale: tr ? "tr_TR" : "en_US",
+      alternateLocale: tr ? ["en_US"] : ["tr_TR"],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} | M&G Digital`,
+      description,
+    },
+  };
+}
 
 const services = [
   {

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
@@ -10,6 +11,61 @@ type PageProps = {
     locale: string;
   }>;
 };
+
+const SITE_URL = "https://mgdigitalagency.com.tr";
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { locale } = await params;
+
+  if (locale !== "en" && locale !== "tr") {
+    return {};
+  }
+
+  const tr = locale === "tr";
+
+  const title = tr
+    ? "Hakkımızda — 360° Dijital İletişim Ajansı"
+    : "About — 360° Digital Communication Agency";
+
+  const description = tr
+    ? "M&G Digital; Bodrum, İstanbul ve Lizbon'da faaliyet gösteren bağımsız 360° dijital iletişim ajansıdır. Strateji, yaratıcı iletişim, içerik, prodüksiyon, dijital deneyim ve büyüme çözümleri sunar."
+    : "M&G Digital is an independent 360° digital communications agency working across Bodrum, Istanbul and Lisbon, connecting strategy, creative, content, production, digital experiences and growth.";
+
+  const canonical = `${SITE_URL}/${locale}/about`;
+
+  return {
+    title,
+    description,
+
+    alternates: {
+      canonical,
+
+      languages: {
+        en: `${SITE_URL}/en/about`,
+        tr: `${SITE_URL}/tr/about`,
+        "x-default": `${SITE_URL}/en/about`,
+      },
+    },
+
+    openGraph: {
+      type: "website",
+      url: canonical,
+      siteName: "M&G Digital",
+      title: `${title} | M&G Digital`,
+      description,
+      locale: tr ? "tr_TR" : "en_US",
+      alternateLocale: tr ? ["en_US"] : ["tr_TR"],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} | M&G Digital`,
+      description,
+    },
+  };
+}
 
 const principles = [
   {

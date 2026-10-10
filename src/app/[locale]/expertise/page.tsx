@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
@@ -10,7 +11,59 @@ type PageProps = {
     locale: string;
   }>;
 };
+const SITE_URL = "https://mgdigitalagency.com.tr";
 
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { locale } = await params;
+
+  if (locale !== "en" && locale !== "tr") {
+    return {};
+  }
+
+  const tr = locale === "tr";
+
+  const title = tr
+    ? "Uzmanlık — Turizm, Gastronomi, Lifestyle, Lüks & Kültür"
+    : "Expertise — Hospitality, Food, Lifestyle, Luxury & Culture";
+
+  const description = tr
+    ? "M&G Digital; turizm ve konaklama, gastronomi, lifestyle, lüks ve kültür markaları konusunda uzmanlaşmış bağımsız bir dijital iletişim ajansıdır. Bodrum, İstanbul ve Lizbon."
+    : "M&G Digital is an independent digital communications agency specializing in hospitality, food and beverage, lifestyle, luxury and culture brands across Bodrum, Istanbul and Lisbon.";
+
+  const canonical = `${SITE_URL}/${locale}/expertise`;
+
+  return {
+    title,
+    description,
+
+    alternates: {
+      canonical,
+      languages: {
+        en: `${SITE_URL}/en/expertise`,
+        tr: `${SITE_URL}/tr/expertise`,
+        "x-default": `${SITE_URL}/en/expertise`,
+      },
+    },
+
+    openGraph: {
+      type: "website",
+      url: canonical,
+      siteName: "M&G Digital",
+      title: `${title} | M&G Digital`,
+      description,
+      locale: tr ? "tr_TR" : "en_US",
+      alternateLocale: tr ? ["en_US"] : ["tr_TR"],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} | M&G Digital`,
+      description,
+    },
+  };
+}
 const expertise = [
   {
     no: "01",

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
@@ -16,6 +17,97 @@ type PageProps = {
     slug: string;
   }>;
 };
+
+const SITE_URL = "https://mgdigitalagency.com.tr";
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { locale, slug } = await params;
+
+  if (locale !== "en" && locale !== "tr") {
+    return {};
+  }
+
+  const project = getProject(slug);
+
+  if (!project) {
+    return {};
+  }
+
+  const tr = locale === "tr";
+
+  const category = tr
+    ? project.categoryTR
+    : project.categoryEN;
+
+  const projectDescription = project.caseStudy
+    ? tr
+      ? project.caseStudy.introTR
+      : project.caseStudy.introEN
+    : tr
+      ? project.introTR
+      : project.introEN;
+
+  const title = `${project.client} — ${category}`;
+
+  const description =
+    projectDescription.length > 160
+      ? `${projectDescription.slice(0, 157).trim()}...`
+      : projectDescription;
+
+  const canonical = `${SITE_URL}/${locale}/work/${slug}`;
+
+  const image =
+    project.coverType === "image"
+      ? project.cover
+      : undefined;
+
+  return {
+    title,
+    description,
+
+    alternates: {
+      canonical,
+      languages: {
+        en: `${SITE_URL}/en/work/${slug}`,
+        tr: `${SITE_URL}/tr/work/${slug}`,
+        "x-default": `${SITE_URL}/en/work/${slug}`,
+      },
+    },
+
+    openGraph: {
+      type: "article",
+      url: canonical,
+      siteName: "M&G Digital",
+      title: `${title} | M&G Digital`,
+      description,
+      locale: tr ? "tr_TR" : "en_US",
+      alternateLocale: tr ? ["en_US"] : ["tr_TR"],
+      ...(image
+        ? {
+            images: [
+              {
+                url: image,
+                alt: project.client,
+              },
+            ],
+          }
+        : {}),
+    },
+
+    twitter: {
+      card: image ? "summary_large_image" : "summary",
+      title: `${title} | M&G Digital`,
+      description,
+      ...(image
+        ? {
+            images: [image],
+          }
+        : {}),
+    },
+  };
+}
 
 export default async function ProjectPage({
   params,
@@ -37,12 +129,83 @@ export default async function ProjectPage({
 
   const caseStudy = project.caseStudy;
   const caseStudySections = caseStudy?.sections ?? [];
+    const category = tr
+    ? project.categoryTR
+    : project.categoryEN;
 
-  return (
-    <main id="top" className="mg-project-page">
+  const description = caseStudy
+    ? tr
+      ? caseStudy.introTR
+      : caseStudy.introEN
+    : tr
+      ? project.introTR
+      : project.introEN;
 
-      {/* ===================================================
-          HERO
+  const canonical = `${SITE_URL}/${locale}/work/${slug}`;
+
+  const projectSchema = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: project.client,
+    description,
+    url: canonical,
+    inLanguage: tr ? "tr-TR" : "en-US",
+    genre: category,
+    dateCreated: String(project.year),
+    creator: {
+      "@type": "Organization",
+      name: "M&G Digital",
+      url: SITE_URL,
+    },
+    ...(project.coverType === "image"
+      ? {
+          image: project.cover,
+        }
+      : {}),
+  };
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: tr ? "Ana Sayfa" : "Home",
+        item: `${SITE_URL}/${locale}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: tr ? "İşler" : "Work",
+        item: `${SITE_URL}/${locale}/work`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: project.client,
+        item: canonical,
+      },
+    ],
+  };
+
+return (
+  <main id="top" className="mg-project-page">
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(projectSchema).replace(/</g, "\\u003c"),
+      }}
+    />
+
+    <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
+  }}
+/>
+
+    {/* ===================================================
+        HERO
       =================================================== */}
 
       <section className="mg-project-hero">

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
@@ -7,7 +8,53 @@ type PrivacyPageProps = {
     locale: "en" | "tr";
   }>;
 };
+const SITE_URL = "https://mgdigitalagency.com.tr";
 
+export async function generateMetadata({
+  params,
+}: PrivacyPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const tr = locale === "tr";
+
+ const title = tr
+  ? "Gizlilik Politikası"
+  : "Privacy Policy";
+
+  const description = tr
+    ? "M&G Digital Gizlilik Politikası. Kişisel verilerin nasıl toplandığı, işlendiği, korunduğu ve haklarınız hakkında bilgi edinin."
+    : "Read the M&G Digital Privacy Policy to learn how personal data is collected, processed and protected, and understand your privacy rights.";
+
+  const path = `/${locale}/privacy`;
+
+  return {
+    title,
+    description,
+
+    alternates: {
+      canonical: path,
+      languages: {
+        en: "/en/privacy",
+        tr: "/tr/privacy",
+        "x-default": "/en/privacy",
+      },
+    },
+
+    openGraph: {
+      type: "website",
+      url: `${SITE_URL}${path}`,
+      title,
+      description,
+      siteName: "M&G Digital",
+      locale: tr ? "tr_TR" : "en_US",
+    },
+
+    twitter: {
+      card: "summary",
+      title,
+      description,
+    },
+  };
+}
 type SectionItem = [string, string, string];
 
 export default async function PrivacyPage({
