@@ -42,7 +42,7 @@ const securityHeaders = [
       "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
   },
   {
-    key: "Content-Security-Policy-Report-Only",
+   key: "Content-Security-Policy",
     value: contentSecurityPolicy,
   },
 ];
