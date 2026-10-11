@@ -9,7 +9,7 @@ import Clients from "../../components/Clients";
 import Agency from "../../components/Agency";
 import Thinking from "../../components/Thinking";
 import Footer from "../../components/Footer";
-
+import BackToTopButton from "../../components/BackToTopButton";
 type PageProps = {
   params: Promise<{
     locale: string;
@@ -41,7 +41,11 @@ return (
 
     <Thinking locale={locale} />
 
-    <Footer locale={locale} />
+    <BackToTopButton
+  label={locale === "tr" ? "Sayfanın başına dön" : "Back to top"}
+/>
+
+<Footer locale={locale} />
   </main>
 );
 }

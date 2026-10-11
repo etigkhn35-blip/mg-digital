@@ -12308,13 +12308,13 @@ button {
   }
 }
 /* =========================================================
-   BACK TO TOP
+   FLOATING BACK TO TOP
 ========================================================= */
 
 .mg-back-to-top {
-  position: absolute;
+  position: fixed;
   right: var(--page);
-  bottom: 92px;
+  bottom: 32px;
 
   width: 52px;
   height: 52px;
@@ -12324,20 +12324,37 @@ button {
   justify-content: center;
 
   padding: 0;
-  border: 1px solid rgba(247, 247, 242, 0.45);
+
+  border: 1px solid rgba(21, 21, 19, 0.22);
   border-radius: 50%;
 
-  background: transparent;
+  background: #151513;
   color: #f7f7f2;
 
   cursor: pointer;
-  z-index: 5;
+  z-index: 9000;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateY(18px) scale(0.92);
 
   transition:
-    background-color 0.25s ease,
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease,
+    background 0.25s ease,
     color 0.25s ease,
-    border-color 0.25s ease,
-    transform 0.25s ease;
+    border-color 0.25s ease;
+}
+
+.mg-back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transform: translateY(0) scale(1);
 }
 
 .mg-back-to-top svg {
@@ -12345,17 +12362,33 @@ button {
   height: 18px;
 }
 
-.mg-back-to-top:hover {
+/* Koyu zemin üzerinde otomatik ters renk */
+.mg-back-to-top.is-on-dark {
   background: #f7f7f2;
-  border-color: #f7f7f2;
   color: #151513;
-  transform: translateY(-3px);
+  border-color: rgba(247, 247, 242, 0.65);
+}
+
+.mg-back-to-top.is-on-dark.is-visible:hover {
+  background: #151513;
+  color: #f7f7f2;
+  border-color: #f7f7f2;
+
+  transform: translateY(-4px) scale(1);
+}
+
+.mg-back-to-top.is-visible:hover {
+  background: #f7f7f2;
+  color: #151513;
+  border-color: #151513;
+
+  transform: translateY(-4px) scale(1);
 }
 
 @media (max-width: 768px) {
   .mg-back-to-top {
     right: 20px;
-    bottom: 78px;
+    bottom: 20px;
 
     width: 46px;
     height: 46px;
