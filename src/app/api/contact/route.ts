@@ -59,11 +59,7 @@ function badRequest(message = "Invalid request.") {
 export async function POST(request: Request) {
   try {
 
-    console.log("CONTACT IP HEADERS", {
-  forwarded: request.headers.get("forwarded"),
-  xForwardedFor: request.headers.get("x-forwarded-for"),
-  xRealIp: request.headers.get("x-real-ip"),
-});
+    
     /*
      * Content-Type kontrolü
      */
