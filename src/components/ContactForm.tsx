@@ -75,6 +75,10 @@ export default function ContactForm({ locale }: ContactFormProps) {
           phone: formData.get("phone"),
           interests: selected,
           message: formData.get("message"),
+
+          // Honeypot — gerçek kullanıcı bunu görmez.
+          website: formData.get("website"),
+
           locale,
         }),
       });
@@ -132,7 +136,36 @@ export default function ContactForm({ locale }: ContactFormProps) {
   }
 
   return (
-    <form className="mg-contact-form" onSubmit={handleSubmit}>
+    <form
+      className="mg-contact-form"
+      onSubmit={handleSubmit}
+    >
+      {/* BOT HONEYPOT */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          left: "-9999px",
+          top: "0",
+          width: "1px",
+          height: "1px",
+          overflow: "hidden",
+          pointerEvents: "none",
+        }}
+      >
+        <label htmlFor="contact-website">
+          Website
+        </label>
+
+        <input
+          id="contact-website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       <div className="mg-contact-field">
         <label htmlFor="contact-name">
           01 / {tr ? "ADINIZ" : "YOUR NAME"}
@@ -143,6 +176,7 @@ export default function ContactForm({ locale }: ContactFormProps) {
           name="name"
           type="text"
           required
+          maxLength={100}
           autoComplete="name"
           placeholder={tr ? "Ad Soyad" : "Name Surname"}
         />
@@ -157,6 +191,7 @@ export default function ContactForm({ locale }: ContactFormProps) {
           id="contact-company"
           name="company"
           type="text"
+          maxLength={150}
           autoComplete="organization"
           placeholder={
             tr
@@ -176,6 +211,7 @@ export default function ContactForm({ locale }: ContactFormProps) {
           name="email"
           type="email"
           required
+          maxLength={254}
           autoComplete="email"
           placeholder="name@company.com"
         />
@@ -190,6 +226,7 @@ export default function ContactForm({ locale }: ContactFormProps) {
           id="contact-phone"
           name="phone"
           type="tel"
+          maxLength={40}
           autoComplete="tel"
           placeholder="+90"
         />
@@ -235,6 +272,7 @@ export default function ContactForm({ locale }: ContactFormProps) {
           id="contact-message"
           name="message"
           required
+          maxLength={5000}
           rows={4}
           placeholder={
             tr
