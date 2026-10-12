@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
@@ -18,11 +18,11 @@ export async function generateMetadata({
   const tr = locale === "tr";
 
 const title = tr
-  ? "Çerez Politikası"
+  ? "Ã‡erez PolitikasÄ±"
   : "Cookie Policy";
 
   const description = tr
-    ? "M&G Digital Çerez Politikası. Web sitemizde kullanılan çerezler ve benzeri teknolojiler, kullanım amaçları ve tercihlerinizi nasıl yönetebileceğiniz hakkında bilgi edinin."
+    ? "M&G Digital Ã‡erez PolitikasÄ±. Web sitemizde kullanÄ±lan Ã§erezler ve benzeri teknolojiler, kullanÄ±m amaÃ§larÄ± ve tercihlerinizi nasÄ±l yÃ¶netebileceÄŸiniz hakkÄ±nda bilgi edinin."
     : "Read the M&G Digital Cookie Policy to learn about cookies and similar technologies used on our website, why they are used and how you can manage your preferences.";
 
   const path = `/${locale}/cookies`;
@@ -65,18 +65,18 @@ export default async function CookiesPage({ params }: CookiesPageProps) {
 
   const sections: SectionItem[] = tr
     ? [
-        ["01", "Çerez politikası hakkında", "hakkinda"],
-        ["02", "Çerez nedir?", "cerez-nedir"],
-        ["03", "Çerezleri neden kullanıyoruz?", "neden"],
-        ["04", "Zorunlu çerezler", "zorunlu"],
+        ["01", "Ã‡erez politikasÄ± hakkÄ±nda", "hakkinda"],
+        ["02", "Ã‡erez nedir?", "cerez-nedir"],
+        ["03", "Ã‡erezleri neden kullanÄ±yoruz?", "neden"],
+        ["04", "Zorunlu Ã§erezler", "zorunlu"],
         ["05", "Tercih teknolojileri", "tercihler"],
         ["06", "Analitik teknolojileri", "analitik"],
         ["07", "Pazarlama teknolojileri", "pazarlama"],
-        ["08", "Üçüncü taraf teknolojileri", "ucuncu-taraf"],
-        ["09", "Tercihlerinizi yönetme", "yonetim"],
-        ["10", "Saklama süreleri", "saklama"],
-        ["11", "Politika değişiklikleri", "degisiklikler"],
-        ["12", "İletişim", "iletisim"],
+        ["08", "ÃœÃ§Ã¼ncÃ¼ taraf teknolojileri", "ucuncu-taraf"],
+        ["09", "Tercihlerinizi yÃ¶netme", "yonetim"],
+        ["10", "Saklama sÃ¼releri", "saklama"],
+        ["11", "Politika deÄŸiÅŸiklikleri", "degisiklikler"],
+        ["12", "Ä°letiÅŸim", "iletisim"],
       ]
     : [
         ["01", "About this cookie policy", "about"],
@@ -105,23 +105,23 @@ export default async function CookiesPage({ params }: CookiesPageProps) {
           </div>
 
           <h1>
-            <span>{tr ? "Çerez" : "Cookie"}</span>
+            <span>{tr ? "Ã‡erez" : "Cookie"}</span>
             <br />
             <span className="mg-privacy-title-accent">
-              {tr ? "politikası." : "policy."}
+              {tr ? "politikasÄ±." : "policy."}
             </span>
           </h1>
 
           <div className="mg-privacy-hero-bottom">
             <p>
               {tr
-                ? "Web sitemizde kullanılan çerezler ve benzeri teknolojiler hakkında bilgi."
+                ? "Web sitemizde kullanÄ±lan Ã§erezler ve benzeri teknolojiler hakkÄ±nda bilgi."
                 : "Information about cookies and similar technologies used on our website."}
             </p>
 
             <span>
               {tr
-                ? "SON GÜNCELLEME / EKİM 2026"
+                ? "SON GÃœNCELLEME / EKÄ°M 2026"
                 : "LAST UPDATED / OCTOBER 2026"}
             </span>
           </div>
@@ -131,7 +131,7 @@ export default async function CookiesPage({ params }: CookiesPageProps) {
           <aside className="mg-privacy-index">
             <div className="mg-privacy-index-inner">
               <span className="mg-privacy-index-title">
-                {tr ? "BÖLÜMLER:" : "SECTIONS:"}
+                {tr ? "BÃ–LÃœMLER:" : "SECTIONS:"}
               </span>
 
               <nav>
@@ -150,81 +150,81 @@ export default async function CookiesPage({ params }: CookiesPageProps) {
               <>
                 <PolicySection
                   number="01"
-                  title="Çerez politikası hakkında"
+                  title="Ã‡erez politikasÄ± hakkÄ±nda"
                   id="hakkinda"
                 >
                   <p>
-                    Bu Çerez Politikası, M&G Digital Communication Agency
-                    tarafından işletilen web sitesinde çerezler ve benzeri
-                    teknolojilerin nasıl kullanılabileceği hakkında bilgi
-                    vermek amacıyla hazırlanmıştır.
+                    Bu Ã‡erez PolitikasÄ±, M&G Digital Communication Agency
+                    tarafÄ±ndan iÅŸletilen web sitesinde Ã§erezler ve benzeri
+                    teknolojilerin nasÄ±l kullanÄ±labileceÄŸi hakkÄ±nda bilgi
+                    vermek amacÄ±yla hazÄ±rlanmÄ±ÅŸtÄ±r.
                   </p>
 
                   <p>
-                    Bu politika, Gizlilik Politikamızla birlikte okunmalıdır.
+                    Bu politika, Gizlilik PolitikamÄ±zla birlikte okunmalÄ±dÄ±r.
                   </p>
                 </PolicySection>
 
                 <PolicySection
                   number="02"
-                  title="Çerez nedir?"
+                  title="Ã‡erez nedir?"
                   id="cerez-nedir"
                 >
                   <p>
-                    Çerezler, bir web sitesini ziyaret ettiğinizde tarayıcınız
-                    veya cihazınız aracılığıyla saklanabilen küçük veri
-                    parçalarıdır.
+                    Ã‡erezler, bir web sitesini ziyaret ettiÄŸinizde tarayÄ±cÄ±nÄ±z
+                    veya cihazÄ±nÄ±z aracÄ±lÄ±ÄŸÄ±yla saklanabilen kÃ¼Ã§Ã¼k veri
+                    parÃ§alarÄ±dÄ±r.
                   </p>
 
                   <p>
-                    Benzer amaçlarla yerel depolama gibi tarayıcı tabanlı
-                    teknolojiler de kullanılabilir. Bu politikada kolaylık
-                    sağlamak amacıyla bu tür teknolojiler birlikte
-                    açıklanmaktadır.
+                    Benzer amaÃ§larla yerel depolama gibi tarayÄ±cÄ± tabanlÄ±
+                    teknolojiler de kullanÄ±labilir. Bu politikada kolaylÄ±k
+                    saÄŸlamak amacÄ±yla bu tÃ¼r teknolojiler birlikte
+                    aÃ§Ä±klanmaktadÄ±r.
                   </p>
                 </PolicySection>
 
                 <PolicySection
                   number="03"
-                  title="Çerezleri neden kullanıyoruz?"
+                  title="Ã‡erezleri neden kullanÄ±yoruz?"
                   id="neden"
                 >
                   <p>
-                    Web sitesinin güvenli ve düzgün biçimde çalışmasını
-                    sağlamak ve kullanıcı tercihlerini hatırlamak amacıyla
-                    gerekli teknolojiler kullanılabilir.
+                    Web sitesinin gÃ¼venli ve dÃ¼zgÃ¼n biÃ§imde Ã§alÄ±ÅŸmasÄ±nÄ±
+                    saÄŸlamak ve kullanÄ±cÄ± tercihlerini hatÄ±rlamak amacÄ±yla
+                    gerekli teknolojiler kullanÄ±labilir.
                   </p>
 
                   <p>
                     Zorunlu olmayan analitik, performans veya pazarlama
-                    teknolojilerinin ileride kullanılması hâlinde bunlar,
-                    yürürlükteki mevzuatın gerektirdiği durumlarda uygun bir
-                    tercih ve onay mekanizmasına tabi tutulacaktır.
+                    teknolojilerinin ileride kullanÄ±lmasÄ± hÃ¢linde bunlar,
+                    yÃ¼rÃ¼rlÃ¼kteki mevzuatÄ±n gerektirdiÄŸi durumlarda uygun bir
+                    tercih ve onay mekanizmasÄ±na tabi tutulacaktÄ±r.
                   </p>
                 </PolicySection>
 
                 <PolicySection
                   number="04"
-                  title="Zorunlu çerezler"
+                  title="Zorunlu Ã§erezler"
                   id="zorunlu"
                 >
                   <p>
-                    Bazı teknolojiler web sitesinin temel işlevlerinin
-                    sağlanması, güvenliğin korunması ve kullanıcı tarafından
-                    yapılan tercihlerin hatırlanması için gerekli olabilir.
+                    BazÄ± teknolojiler web sitesinin temel iÅŸlevlerinin
+                    saÄŸlanmasÄ±, gÃ¼venliÄŸin korunmasÄ± ve kullanÄ±cÄ± tarafÄ±ndan
+                    yapÄ±lan tercihlerin hatÄ±rlanmasÄ± iÃ§in gerekli olabilir.
                   </p>
 
                   <div className="mg-cookie-policy-table">
                     <div className="mg-cookie-policy-row mg-cookie-policy-head">
-                      <span>TEKNOLOJİ</span>
-                      <span>AMAÇ</span>
+                      <span>TEKNOLOJÄ°</span>
+                      <span>AMAÃ‡</span>
                     </div>
 
                     <div className="mg-cookie-policy-row">
                       <strong>mg-cookie-consent</strong>
                       <span>
-                        Çerez bildirimine ilişkin seçiminizi hatırlamak için
-                        tarayıcınızın yerel depolama alanında kullanılır.
+                        Ã‡erez bildirimine iliÅŸkin seÃ§iminizi hatÄ±rlamak iÃ§in
+                        tarayÄ±cÄ±nÄ±zÄ±n yerel depolama alanÄ±nda kullanÄ±lÄ±r.
                       </span>
                     </div>
                   </div>
@@ -236,13 +236,13 @@ export default async function CookiesPage({ params }: CookiesPageProps) {
                   id="tercihler"
                 >
                   <p>
-                    Kullanıcının site üzerindeki belirli seçimlerini
-                    hatırlamak amacıyla tercih teknolojileri kullanılabilir.
+                    KullanÄ±cÄ±nÄ±n site Ã¼zerindeki belirli seÃ§imlerini
+                    hatÄ±rlamak amacÄ±yla tercih teknolojileri kullanÄ±labilir.
                   </p>
 
                   <p>
-                    Mevcut çerez bildirimimiz, bildirime ilişkin seçiminizi
-                    tarayıcınızın yerel depolama alanında saklar.
+                    Mevcut Ã§erez bildirimimiz, bildirime iliÅŸkin seÃ§iminizi
+                    tarayÄ±cÄ±nÄ±zÄ±n yerel depolama alanÄ±nda saklar.
                   </p>
                 </PolicySection>
 
@@ -252,15 +252,15 @@ export default async function CookiesPage({ params }: CookiesPageProps) {
                   id="analitik"
                 >
                   <p>
-                    Analitik teknolojileri, ziyaretçilerin web sitesini nasıl
-                    kullandığını anlamaya ve sitenin performansını
-                    geliştirmeye yardımcı olabilir.
+                    Analitik teknolojileri, ziyaretÃ§ilerin web sitesini nasÄ±l
+                    kullandÄ±ÄŸÄ±nÄ± anlamaya ve sitenin performansÄ±nÄ±
+                    geliÅŸtirmeye yardÄ±mcÄ± olabilir.
                   </p>
 
                   <p>
-                    Zorunlu olmayan analitik teknolojileri kullanılması
-                    hâlinde, gerekli olduğu ölçüde kullanıcı tercihleri ve
-                    yürürlükteki mevzuat dikkate alınacaktır.
+                    Zorunlu olmayan analitik teknolojileri kullanÄ±lmasÄ±
+                    hÃ¢linde, gerekli olduÄŸu Ã¶lÃ§Ã¼de kullanÄ±cÄ± tercihleri ve
+                    yÃ¼rÃ¼rlÃ¼kteki mevzuat dikkate alÄ±nacaktÄ±r.
                   </p>
                 </PolicySection>
 
@@ -270,95 +270,95 @@ export default async function CookiesPage({ params }: CookiesPageProps) {
                   id="pazarlama"
                 >
                   <p>
-                    Pazarlama teknolojileri reklamların etkinliğini ölçmek,
-                    kampanyaları değerlendirmek veya kullanıcı etkileşimlerini
-                    anlamak amacıyla kullanılabilir.
+                    Pazarlama teknolojileri reklamlarÄ±n etkinliÄŸini Ã¶lÃ§mek,
+                    kampanyalarÄ± deÄŸerlendirmek veya kullanÄ±cÄ± etkileÅŸimlerini
+                    anlamak amacÄ±yla kullanÄ±labilir.
                   </p>
 
                   <p>
-                    Bu tür zorunlu olmayan teknolojiler kullanılması hâlinde,
-                    yürürlükteki mevzuatın gerektirdiği uygun tercih veya onay
-                    mekanizması uygulanacaktır.
+                    Bu tÃ¼r zorunlu olmayan teknolojiler kullanÄ±lmasÄ± hÃ¢linde,
+                    yÃ¼rÃ¼rlÃ¼kteki mevzuatÄ±n gerektirdiÄŸi uygun tercih veya onay
+                    mekanizmasÄ± uygulanacaktÄ±r.
                   </p>
                 </PolicySection>
 
                 <PolicySection
                   number="08"
-                  title="Üçüncü taraf teknolojileri"
+                  title="ÃœÃ§Ã¼ncÃ¼ taraf teknolojileri"
                   id="ucuncu-taraf"
                 >
                   <p>
-                    Web sitesinin barındırılması, güvenliği veya diğer teknik
-                    işlevleri kapsamında üçüncü taraf hizmet sağlayıcıların
-                    teknolojilerinden yararlanılabilir.
+                    Web sitesinin barÄ±ndÄ±rÄ±lmasÄ±, gÃ¼venliÄŸi veya diÄŸer teknik
+                    iÅŸlevleri kapsamÄ±nda Ã¼Ã§Ã¼ncÃ¼ taraf hizmet saÄŸlayÄ±cÄ±larÄ±n
+                    teknolojilerinden yararlanÄ±labilir.
                   </p>
 
                   <p>
-                    Üçüncü taraf hizmetlerin kullanılması hâlinde ilgili veri
-                    işleme faaliyetleri ve uygulanabilir yasal gereklilikler
-                    dikkate alınır.
+                    ÃœÃ§Ã¼ncÃ¼ taraf hizmetlerin kullanÄ±lmasÄ± hÃ¢linde ilgili veri
+                    iÅŸleme faaliyetleri ve uygulanabilir yasal gereklilikler
+                    dikkate alÄ±nÄ±r.
                   </p>
                 </PolicySection>
 
                 <PolicySection
                   number="09"
-                  title="Tercihlerinizi yönetme"
+                  title="Tercihlerinizi yÃ¶netme"
                   id="yonetim"
                 >
                   <p>
-                    Çerez bildiriminde yaptığınız seçim tarayıcınızda
-                    saklanabilir. Tarayıcınızın site verilerini veya yerel
-                    depolama alanını temizlediğinizde bildirim yeniden
-                    görüntülenebilir.
+                    Ã‡erez bildiriminde yaptÄ±ÄŸÄ±nÄ±z seÃ§im tarayÄ±cÄ±nÄ±zda
+                    saklanabilir. TarayÄ±cÄ±nÄ±zÄ±n site verilerini veya yerel
+                    depolama alanÄ±nÄ± temizlediÄŸinizde bildirim yeniden
+                    gÃ¶rÃ¼ntÃ¼lenebilir.
                   </p>
 
                   <p>
-                    Tarayıcı ayarlarınız üzerinden çerezleri ve diğer site
-                    verilerini görüntüleyebilir, sınırlandırabilir veya
+                    TarayÄ±cÄ± ayarlarÄ±nÄ±z Ã¼zerinden Ã§erezleri ve diÄŸer site
+                    verilerini gÃ¶rÃ¼ntÃ¼leyebilir, sÄ±nÄ±rlandÄ±rabilir veya
                     silebilirsiniz.
                   </p>
                 </PolicySection>
 
                 <PolicySection
                   number="10"
-                  title="Saklama süreleri"
+                  title="Saklama sÃ¼releri"
                   id="saklama"
                 >
                   <p>
-                    Çerezler ve benzeri teknolojiler aracılığıyla saklanan
-                    bilgilerin süresi, teknolojinin amacı ve niteliğine göre
-                    değişebilir.
+                    Ã‡erezler ve benzeri teknolojiler aracÄ±lÄ±ÄŸÄ±yla saklanan
+                    bilgilerin sÃ¼resi, teknolojinin amacÄ± ve niteliÄŸine gÃ¶re
+                    deÄŸiÅŸebilir.
                   </p>
 
                   <p>
-                    Bilgiler yalnızca ilgili amacın gerektirdiği ve
-                    uygulanabilir mevzuatın izin verdiği süre boyunca
-                    tutulmalıdır.
+                    Bilgiler yalnÄ±zca ilgili amacÄ±n gerektirdiÄŸi ve
+                    uygulanabilir mevzuatÄ±n izin verdiÄŸi sÃ¼re boyunca
+                    tutulmalÄ±dÄ±r.
                   </p>
                 </PolicySection>
 
                 <PolicySection
                   number="11"
-                  title="Politikadaki değişiklikler"
+                  title="Politikadaki deÄŸiÅŸiklikler"
                   id="degisiklikler"
                 >
                   <p>
-                    Bu Çerez Politikası, web sitesinde kullanılan
+                    Bu Ã‡erez PolitikasÄ±, web sitesinde kullanÄ±lan
                     teknolojilerde veya ilgili mevzuatta meydana gelen
-                    değişikliklere bağlı olarak güncellenebilir.
+                    deÄŸiÅŸikliklere baÄŸlÄ± olarak gÃ¼ncellenebilir.
                   </p>
 
                   <p>
-                    Güncel sürüm bu sayfada yayımlanır ve son güncelleme
-                    tarihi gerektiğinde değiştirilir.
+                    GÃ¼ncel sÃ¼rÃ¼m bu sayfada yayÄ±mlanÄ±r ve son gÃ¼ncelleme
+                    tarihi gerektiÄŸinde deÄŸiÅŸtirilir.
                   </p>
                 </PolicySection>
 
-                <PolicySection number="12" title="İletişim" id="iletisim">
+                <PolicySection number="12" title="Ä°letiÅŸim" id="iletisim">
                   <p>
-                    Çerez politikamız veya web sitemizde kullanılan
-                    teknolojiler hakkında sorularınız için bizimle iletişime
-                    geçebilirsiniz.
+                    Ã‡erez politikamÄ±z veya web sitemizde kullanÄ±lan
+                    teknolojiler hakkÄ±nda sorularÄ±nÄ±z iÃ§in bizimle iletiÅŸime
+                    geÃ§ebilirsiniz.
                   </p>
 
                   <a
@@ -372,7 +372,7 @@ export default async function CookiesPage({ params }: CookiesPageProps) {
                     className="mg-privacy-home-link"
                     href={`/${locale}/privacy`}
                   >
-                    GİZLİLİK POLİTİKASI
+                    GÄ°ZLÄ°LÄ°K POLÄ°TÄ°KASI
                   </Link>
                 </PolicySection>
               </>
@@ -589,7 +589,7 @@ export default async function CookiesPage({ params }: CookiesPageProps) {
                     className="mg-privacy-contact-link"
                     href="mailto:hello@mgdigitalagency.com.tr"
                   >
-                    hello@mgdigitalagency.com.tr ↗
+                    hello@mgdigitalagency.com.tr â†—
                   </a>
 
                   <Link
