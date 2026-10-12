@@ -112,9 +112,13 @@ export default function Thinking({ locale }: ThinkingProps) {
             </div>
 
             <div className="mg-thinking-read">
-              <span>{tr ? "OKU" : "READ"}</span>
-              <span>↗</span>
-            </div>
+  <span>{tr ? "OKU" : "READ"}</span>
+  <ArrowUpRight
+    size={15}
+    strokeWidth={1.4}
+    aria-hidden="true"
+  />
+</div>
           </Link>
         ))}
       </div>
