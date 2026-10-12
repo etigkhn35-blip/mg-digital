@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+
 
 type ClientsProps = {
   locale: "en" | "tr";
@@ -132,9 +134,17 @@ export default function Clients({ locale }: ClientsProps) {
                   : client.categoryEN}
               </span>
 
-              <span className="mg-client-symbol">
-                {client.slug ? "↗" : "—"}
-              </span>
+             <span className="mg-client-symbol">
+  {client.slug ? (
+    <ArrowUpRight
+      size={18}
+      strokeWidth={1.25}
+      aria-hidden="true"
+    />
+  ) : (
+    "—"
+  )}
+</span>
             </>
           );
 
