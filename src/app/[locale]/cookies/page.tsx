@@ -365,7 +365,7 @@ export default async function CookiesPage({ params }: CookiesPageProps) {
                     className="mg-privacy-contact-link"
                     href="mailto:hello@mgdigitalagency.com.tr"
                   >
-                    hello@mgdigitalagency.com.tr ↗
+                    hello@mgdigitalagency.com.tr 
                   </a>
 
                   <Link

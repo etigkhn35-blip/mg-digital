@@ -443,7 +443,7 @@ export default async function PrivacyPage({
                     className="mg-privacy-contact-link"
                     href="mailto:hello@mgdigitalagency.com.tr"
                   >
-                    hello@mgdigitalagency.com.tr ↗
+                    hello@mgdigitalagency.com.tr 
                   </a>
 
                   <Link className="mg-privacy-home-link" href={`/${locale}`}>
@@ -690,7 +690,7 @@ export default async function PrivacyPage({
                     className="mg-privacy-contact-link"
                     href="mailto:hello@mgdigitalagency.com.tr"
                   >
-                    hello@mgdigitalagency.com.tr ↗
+                    hello@mgdigitalagency.com.tr 
                   </a>
 
                   <Link className="mg-privacy-home-link" href={`/${locale}`}>

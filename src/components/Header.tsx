@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 
 /* =========================================================
    SOCIAL ICONS
@@ -232,9 +233,13 @@ export default function Header({ locale }: HeaderProps) {
                   {item.label}
                 </span>
 
-                <span className="mg-menu-arrow">
-                  ↗
-                </span>
+             <span className="mg-menu-arrow">
+  <ArrowUpRight
+    size={20}
+    strokeWidth={1.25}
+    aria-hidden="true"
+  />
+</span>
               </Link>
             ))}
 
@@ -250,9 +255,13 @@ export default function Header({ locale }: HeaderProps) {
                 {tr ? "İLETİŞİM" : "Contact"}
               </span>
 
-              <span className="mg-menu-arrow">
-                ↗
-              </span>
+             <span className="mg-menu-arrow">
+  <ArrowUpRight
+    size={20}
+    strokeWidth={1.25}
+    aria-hidden="true"
+  />
+</span>
             </Link>
           </nav>
 
